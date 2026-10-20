@@ -31,9 +31,9 @@ def repl_pic(m):
 
 def repl_pf(m):
     name, title, chip, alt = m.group(1).split('|')
-    return (f'<figure class="pf-item"><button type="button" data-cursor="vedi" data-full="{full(name)}" data-title="{title}" aria-label="Apri la foto: {title}">'
+    return (f'<figure class="pf-item"><button type="button" data-cursor="vedi" data-full="{full(name)}" data-title="{title}">'
             f'<div class="ph">{pic(name, "(min-width: 900px) 19rem, 58vw", alt)}<span class="pf-chip">{chip}</span>'
-            f'<figcaption class="pf-cap">{title}</figcaption></div></button></figure>')
+            f'<figcaption class="pf-cap">{title}<span class="sr">, apri la foto</span></figcaption></div></button></figure>')
 
 out = re.sub(r'\{\{pic:([^}]+)\}\}', repl_pic, src)
 out = re.sub(r'\{\{pf:([^}]+)\}\}', repl_pf, out)
