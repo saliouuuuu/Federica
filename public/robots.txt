@@ -1,0 +1,4 @@
+# ANTEPRIMA: i motori di ricerca non devono indicizzare il sito.
+# Quando va online davvero: sostituire con "Allow: /" e aggiungere la riga Sitemap.
+User-agent: *
+Disallow: /
