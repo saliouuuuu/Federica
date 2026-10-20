@@ -239,6 +239,21 @@ html.no-loader .loader { display: none; }
 /* parole giganti tono su tono */
 .giant { position: absolute; z-index: 0; font-family: var(--serif); font-weight: 400; line-height: .8; letter-spacing: -0.04em; color: var(--nude-tono); white-space: nowrap; pointer-events: none; user-select: none; font-optical-sizing: auto; }
 
+/* ── MANIFESTO: vetro smerigliato con le lettere che lo bucano e mostrano la foto nitida ── */
+.mani { position: relative; padding-block: clamp(3rem, 3rem + 4vw, 7rem) clamp(5rem, 4rem + 6vw, 10rem); overflow-x: clip; }
+.mani-grid { display: grid; gap: 2rem; justify-items: center; }
+@media (min-width: 1000px) { .mani-grid { grid-template-columns: 1fr minmax(0, 620px) 1fr; align-items: end; gap: clamp(2rem, 4vw, 4rem); } .mani-l { justify-self: start; align-self: start; } .mani-r { justify-self: end; } }
+.mani-side { display: grid; gap: 1.2rem; max-width: 18rem; }
+.mani-claim { font-family: var(--serif); font-size: clamp(1.8rem, 1.4rem + 1.4vw, 2.6rem); line-height: 1.05; letter-spacing: -0.015em; }
+.mani-claim em { color: var(--bordeaux); }
+.mani-r p { color: var(--cacao-2); }
+.mani-card { position: relative; width: 100%; max-width: 620px; aspect-ratio: 4 / 5; border-radius: calc(var(--r) + 10px); overflow: hidden; background: #6b3a3a; box-shadow: 0 40px 80px -40px rgba(59, 42, 37, .55); }
+@media (max-width: 999px) { .mani-card { width: calc(100% + 16px); } .mani-l { order: -1; justify-self: start; } .mani-r { justify-self: start; } }
+.mani-card svg { display: block; width: 100%; height: 100%; }
+.mani-words text { font-family: var(--serif); font-weight: 900; font-size: 560px; }
+.mani-num { font-family: var(--sans); font-size: 22px; font-weight: 500; letter-spacing: 6px; fill: rgba(241, 238, 233, .9); }
+.mani-words, .mani-lens { transform-box: view-box; transform-origin: 500px 625px; }
+
 /* ── METODO: a sinistra la foto resta ferma e cambia a ogni passo ── */
 .met { background: var(--avorio-2); }
 .met-grid { display: grid; gap: 3rem; }
@@ -507,6 +522,40 @@ html.no-loader .loader { display: none; }
   </div>
 </section>
 
+
+<section class="mani" id="manifesto" aria-label="Sei sempre tu">
+  <div class="wrap mani-grid">
+    <div class="mani-side mani-l">
+      <span class="eyebrow">Manifesto</span>
+      <p class="mani-claim">Valorizzare, <em>non trasformare.</em></p>
+    </div>
+    <figure class="mani-card" data-mani>
+      <svg viewBox="0 0 1000 1250" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="maniT">
+        <title id="maniT">Sei tu: la scritta attraversa un vetro smerigliato e mostra il viso nitido di una sposa</title>
+        <defs>
+          <mask id="maniMask" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="1250">
+            <rect width="1000" height="1250" fill="#fff"/>
+            <g class="mani-words" fill="#000"><text x="500" y="560" text-anchor="middle" textLength="880" lengthAdjust="spacingAndGlyphs" >SEI</text><text x="500" y="1000" text-anchor="middle" textLength="700" lengthAdjust="spacingAndGlyphs" >TU.</text></g>
+            <circle class="mani-lens" cx="535" cy="480" r="92" fill="#000"/>
+          </mask>
+          <filter id="maniEdge" x="-5%" y="-5%" width="110%" height="110%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#241915" flood-opacity=".45"/></filter>
+        </defs>
+        <image class="mani-sharp" href="assets/img/manifesto-nitida-1000.webp" width="1000" height="1250" preserveAspectRatio="xMidYMid slice"/>
+        <image href="assets/img/manifesto-vetro-1000.webp" width="1000" height="1250" preserveAspectRatio="xMidYMid slice" mask="url(#maniMask)"/>
+        <g class="mani-edge" filter="url(#maniEdge)" fill="none" stroke="rgba(255,238,226,.42)" stroke-width="2.2">
+          <g class="mani-words"><text x="500" y="560" text-anchor="middle" textLength="880" lengthAdjust="spacingAndGlyphs" >SEI</text><text x="500" y="1000" text-anchor="middle" textLength="700" lengthAdjust="spacingAndGlyphs" >TU.</text></g>
+          <circle class="mani-lens" cx="535" cy="480" r="92"/>
+        </g>
+        <text class="mani-num" x="48" y="96">2015</text>
+        <text class="mani-num" x="952" y="96" text-anchor="end">TORINO</text>
+      </svg>
+    </figure>
+    <div class="mani-side mani-r">
+      <p>Il trucco non deve coprirti. Parto dalla pelle e lavoro per sottrazione, finché nello specchio resti tu, solo più luminosa.</p>
+      <a class="link" href="#metodo">Il mio metodo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
 
 <section class="sez met" id="metodo" aria-labelledby="metTitle">
   <div class="wrap met-grid">
@@ -950,6 +999,23 @@ document.addEventListener('DOMContentLoaded', function () {
   gsap.from('.pf-big', { yPercent: 40, opacity: 0, duration: 1.4, ease: 'expo.out', scrollTrigger: { trigger: '.pf', start: 'top 70%' } });
   gsap.from('.met-n', { yPercent: 60, opacity: 0, duration: 1.2, ease: 'expo.out', stagger: 0.1, scrollTrigger: { trigger: '.met-steps', start: 'top 80%' } });
 
+
+  /* manifesto: scorrendo le lettere si assestano e la lente scivola sul viso; col mouse la lente lo segue */
+  var mani = $('[data-mani]');
+  if (mani) {
+    var lens = $$('.mani-lens', mani), words = $$('.mani-words', mani), lensOn = false;
+    gsap.fromTo(words, { scale: 1.22, y: 40 }, { scale: 1, y: 0, ease: 'none', scrollTrigger: { trigger: mani, start: 'top bottom', end: 'center center', scrub: 0.6 } });
+    var lensTl = gsap.fromTo(lens, { attr: { cx: 330, cy: 760, r: 60 } }, { attr: { cx: 600, cy: 470, r: 98 }, ease: 'none', scrollTrigger: { trigger: mani, start: 'top 80%', end: 'bottom 30%', scrub: 0.8 } });
+    gsap.from(mani, { clipPath: 'inset(10% 8% 10% 8% round 80px)', duration: 1.6, ease: 'expo.out', scrollTrigger: { trigger: mani, start: 'top 85%' } });
+    if (fine) {
+      var svg = $('svg', mani), pt = svg.createSVGPoint();
+      var lx = gsap.quickTo(lens, 'attr.cx', { duration: 0.7, ease: 'power3' }), ly = gsap.quickTo(lens, 'attr.cy', { duration: 0.7, ease: 'power3' });
+      mani.addEventListener('pointerenter', function () { lensTl.scrollTrigger.disable(false); gsap.to(lens, { attr: { r: 120 }, duration: 0.6, ease: 'power3' }); });
+      mani.addEventListener('pointermove', function (e) { pt.x = e.clientX; pt.y = e.clientY; var q = pt.matrixTransform(svg.getScreenCTM().inverse()); lx(q.x); ly(q.y); });
+      mani.addEventListener('pointerleave', function () { gsap.to(lens, { attr: { r: 98 }, duration: 0.6, ease: 'power3' }); lensTl.scrollTrigger.enable(false); });
+    }
+  }
+
   /* titoli: entrano riga per riga da dietro una maschera */
   if (window.SplitText) {
     $$('[data-lines]').forEach(function (el) {
@@ -978,7 +1044,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var t = e.target;
       cursorEl.classList.toggle('is-view', !!t.closest('[data-cursor="vedi"]'));
       cursorEl.classList.toggle('is-link', !t.closest('[data-cursor="vedi"]') && !!t.closest('a, button, input, select, textarea, label'));
-      cursorEl.classList.toggle('on-dark', !!t.closest('.hero, .rec, .foot, .lb, .pf-panel'));
+      cursorEl.classList.toggle('on-dark', !!t.closest('.hero, .rec, .foot, .lb, .pf-panel, .mani-card'));
     }, { passive: true });
     document.addEventListener('pointerleave', function () { cursorEl.classList.add('is-hidden'); });
     document.addEventListener('pointerenter', function () { cursorEl.classList.remove('is-hidden'); });
