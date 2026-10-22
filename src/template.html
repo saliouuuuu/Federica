@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{title}}</title>
+<meta name="description" content="{{description}}">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#F4F1EC">
+<link rel="canonical" href="{{site}}{{path}}">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="{{title}}">
+<meta property="og:description" content="{{description}}">
+<meta property="og:image" content="{{site}}/assets/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+{{preload}}
+<script src="{{boot}}"></script>
+{{css}}
+{{jsonld}}
+</head>
+<body class="pg-{{nav}}">
+<a class="skip" href="#contenuto">Vai al contenuto</a>
+{{shell}}
+<main id="contenuto">
+{{content}}
+</main>
+{{footer}}
+{{scripts}}
+</body>
+</html>

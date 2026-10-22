@@ -1,0 +1,7 @@
+Librerie di terzi, copiate qui alla versione indicata (nessun caricamento da CDN).
+
+gsap 3.13.0 (gsap, ScrollTrigger, SplitText, Flip): GreenSock / Webflow, licenza "Standard no-charge" https://gsap.com/standard-license
+lenis 1.1.20: darkroom.engineering, licenza MIT
+
+Font (in assets/fonts), tutti con licenza SIL Open Font License 1.1:
+Bodoni Moda, Instrument Serif, Archivo, IBM Plex Mono
