@@ -24,7 +24,7 @@
 <link rel="preload" href="/assets/fonts/archivo-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/instrument-serif-latin-400-italic.woff2" as="font" type="font/woff2" crossorigin>
 <script src="/assets/js/boot.js?v=e8bb1ff9"></script>
-<link rel="stylesheet" href="/assets/css/site.css?v=5ae5a242">
+<link rel="stylesheet" href="/assets/css/site.css?v=296ffd06">
 
 </head>
 <body class="pg-privacy">
@@ -69,6 +69,13 @@
 <p class="toast" role="status" aria-live="polite" data-toast></p>
 <div class="cur" aria-hidden="true"><div class="cur-dot"><span>Vedi</span></div></div>
 <div class="grain" aria-hidden="true"></div>
+<div class="vw" role="dialog" aria-modal="true" aria-label="Foto a schermo intero" data-vw>
+  <div class="vw-stage"><img class="vw-img" alt="" data-vw-img></div>
+  <div class="vw-bar"><span class="vw-cap" data-vw-cap></span><span data-vw-n></span></div>
+  <button class="vw-btn vw-x" type="button" aria-label="Chiudi" data-vw-x><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <button class="vw-btn vw-prev" type="button" aria-label="Foto precedente" data-vw-prev><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+  <button class="vw-btn vw-next" type="button" aria-label="Foto successiva" data-vw-next><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+</div>
 
 <main id="contenuto">
 <article class="pv">
@@ -84,7 +91,7 @@
   <p>Il sito non installa cookie e non usa strumenti di analisi, pubblicità o profilazione. Per questo non c'è un banner dei cookie. I caratteri tipografici e le librerie che gestiscono le animazioni sono ospitati sul sito stesso: non vengono caricati da altri servizi.</p>
 
   <h2>Quali dati tratta il sito</h2>
-  <p><strong>Richiesta di informazioni.</strong> Il sito non ha moduli: i pulsanti «Prenota» e WhatsApp aprono WhatsApp con un messaggio già scritto, che parte solo se lo invii tu. In quel caso Federica vede il tuo numero di telefono e il contenuto del messaggio.</p>
+  <p><strong>Richiesta di informazioni.</strong> Il modulo della Home chiede nome, data dell'evento, servizio e un messaggio. Le risposte restano nel tuo browser: non vengono inviate a un server del sito. Quando premi «Invia la richiesta», o i pulsanti «Prenota» e WhatsApp, si apre WhatsApp con un messaggio già scritto, che parte solo se lo invii tu. In quel caso Federica vede il tuo numero di telefono e il contenuto del messaggio.</p>
   <p><strong>Dati tecnici.</strong> Come ogni sito, il fornitore di hosting può registrare dati tecnici di navigazione (per esempio l'indirizzo IP e la data della visita) per la sicurezza e il funzionamento del servizio.</p>
 
   <h2>Perché li trattiamo e su quale base</h2>
@@ -134,6 +141,6 @@
 <script defer src="/assets/vendor/SplitText.min.js?v=5e519ea2"></script>
 <script defer src="/assets/vendor/lenis.min.js?v=978450a5"></script>
 <script defer src="/assets/js/config.js?v=72627ee5"></script>
-<script defer src="/assets/js/site.js?v=78ae3572"></script>
+<script defer src="/assets/js/site.js?v=5d092a48"></script>
 </body>
 </html>

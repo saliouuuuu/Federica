@@ -1,0 +1,68 @@
+/* Federica Siviero: Portfolio. Rivista aperta che si sfoglia scorrendo, griglia asimmetrica con filtri. */
+
+/* ── 1. RIVISTA APERTA ── */
+.mag { position: relative; }
+.mag-pin { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: clamp(1rem, 2.6vh, 2rem); padding: calc(var(--hdr-h) + 1.4rem) var(--gut) 2rem; overflow: hidden; }
+.mag-head { display: grid; justify-items: center; gap: .7rem; text-align: center; }
+.mag-title { font-family: var(--display); font-weight: 400; font-size: clamp(2.8rem, 1.2rem + 5vw, 6.4rem); line-height: .92; letter-spacing: -.03em; }
+.mag-title em { color: var(--red); }
+.mag-book { position: relative; width: min(94vw, 92vh, 1080px); aspect-ratio: 3 / 2; perspective: 2400px; }
+.mag-book::before { content: ""; position: absolute; inset: 6% 1% -4%; z-index: -1; border-radius: 24px; background: rgba(17, 17, 17, .22); filter: blur(26px); }
+.mag-page, .mag-leaf { position: absolute; top: 0; bottom: 0; width: 50%; }
+.mag-page--l { left: 0; }
+.mag-page--r, .mag-leaf { left: 50%; }
+.mag-leaf { transform-origin: 0 50%; transform-style: preserve-3d; will-change: transform; }
+.mag-face { position: absolute; inset: 0; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+.mag-face--back { transform: rotateY(180deg); }
+.mag-in { position: absolute; inset: 0; display: grid; grid-template-rows: auto 1fr auto; gap: .5rem; padding: 4.5% 6% 3.5%; background: #FBFAF7; }
+.mag-page--l .mag-in, .mag-face--back .mag-in { border-radius: 10px 0 0 10px; }
+.mag-page--r .mag-in, .mag-face--front .mag-in { border-radius: 0 10px 10px 0; }
+/* ombra verso la piega centrale */
+.mag-in::after { content: ""; position: absolute; top: 0; bottom: 0; width: 14%; pointer-events: none; }
+.mag-page--l .mag-in::after, .mag-face--back .mag-in::after { right: 0; background: linear-gradient(to left, rgba(17, 17, 17, .12), rgba(17, 17, 17, 0)); }
+.mag-page--r .mag-in::after, .mag-face--front .mag-in::after { left: 0; background: linear-gradient(to right, rgba(17, 17, 17, .12), rgba(17, 17, 17, 0)); }
+.mag-run { display: flex; justify-content: space-between; gap: .5rem; font-family: var(--mono); font-size: clamp(.45rem, .3rem + .4vw, .66rem); letter-spacing: .16em; text-transform: uppercase; color: var(--ink-2); }
+.mag-ph { display: block; min-height: 0; overflow: hidden; border-radius: 10px; background: #e8e2d9; }
+.mag-ph picture, .mag-ph img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.mag-folio { font-family: var(--mono); font-size: clamp(.45rem, .3rem + .4vw, .66rem); letter-spacing: .1em; color: var(--ink-2); }
+.mag-page--r .mag-folio, .mag-face--front .mag-folio { text-align: right; }
+.mag-shade { position: absolute; inset: 0; border-radius: inherit; background: #111; opacity: 0; pointer-events: none; }
+.mag-spine { position: absolute; z-index: 40; left: 50%; top: 0; bottom: 0; width: 2px; margin-left: -1px; background: linear-gradient(rgba(17, 17, 17, .06), rgba(17, 17, 17, .2), rgba(17, 17, 17, .06)); pointer-events: none; }
+.mag-hint { font-family: var(--mono); font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-2); }
+
+/* ── 2. GRIGLIA CON FILTRI ── */
+.pg-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 1.6rem 2rem; margin-bottom: clamp(2rem, 4vw, 3.4rem); }
+.pg-head .title { margin-top: 1rem; }
+.pg-filters { display: flex; flex-wrap: wrap; gap: .5rem; }
+.pg-filters button { padding: .65rem 1.1rem; border: 1px solid var(--ink); border-radius: 999px; background: transparent; font-size: .74rem; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; cursor: pointer; transition: background .4s var(--ease-out), color .4s var(--ease-out); }
+.pg-filters button:hover { background: rgba(17, 17, 17, .06); }
+.pg-filters button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.pg-filters sup { margin-left: .15rem; font-family: var(--mono); font-size: .62rem; }
+.pg-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1rem, 2.4vw, 2rem) clamp(.8rem, 2vw, 1.8rem); align-items: start; }
+.pg-item { grid-column: span 1; }
+.pg-item[hidden] { display: none; }
+.pg-btn { all: unset; display: block; width: 100%; cursor: pointer; border-radius: var(--r); }
+.pg-btn:focus-visible { outline: 2px solid var(--red); outline-offset: 4px; }
+.pg-ph { display: block; aspect-ratio: var(--ar, 3 / 4); }
+.pg-ph img { scale: 1.14; transition: transform 1.4s var(--ease-out); }
+.pg-btn:hover .pg-ph img { transform: scale(1.05); }
+.pg-cap { display: flex; align-items: baseline; gap: .7rem; margin-top: .8rem; font-family: var(--italic); font-style: italic; font-size: 1.15rem; line-height: 1.2; }
+.pg-cap i { font-style: normal; font-family: var(--mono); font-size: .68rem; color: var(--ink-2); }
+.pg-cap b { margin-left: auto; font-family: var(--mono); font-style: normal; font-weight: 500; font-size: .64rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); }
+/* forme a rotazione (le assegna portfolio.js in base all'ordine delle foto visibili) */
+.pg-item[data-shape="a"] { grid-column: span 2; --ar: 4 / 5; }
+.pg-item[data-shape="c"] { margin-top: 2.4rem; }
+@media (min-width: 900px) {
+  .pg-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .pg-item { grid-column: span 2; }
+  .pg-item[data-shape="a"] { grid-column: span 3; --ar: 4 / 5; }
+  .pg-item[data-shape="b"] { grid-column: span 3; --ar: 4 / 5; margin-top: 5rem; }
+  .pg-item[data-shape="c"] { grid-column: span 2; margin-top: 0; }
+  .pg-item[data-shape="d"] { grid-column: span 2; margin-top: 3.5rem; }
+  .pg-item[data-shape="e"] { grid-column: span 2; }
+  .pg-item[data-shape="f"] { grid-column: span 4; --ar: 16 / 10; }
+  .pg-item[data-shape="g"] { grid-column: span 2; margin-top: 2rem; }
+}
+.pg-after { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem 2rem; margin-top: clamp(3rem, 6vw, 5rem); padding-top: 1.6rem; border-top: 1px solid var(--line); }
+.pg-after p { font-family: var(--display); font-size: clamp(1.4rem, 1.1rem + .9vw, 2rem); line-height: 1.2; }
+.pg-after p em { color: var(--red); }

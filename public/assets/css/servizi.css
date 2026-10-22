@@ -1,0 +1,66 @@
+/* Federica Siviero: Servizi. Tre scontrini appesi con gli spilli, il listino come un menu, corsi e armocromia. */
+
+/* ── 1. INTRO ── */
+.s-intro { position: relative; padding: calc(var(--hdr-h) + clamp(3rem, 8vw, 7rem)) 0 clamp(2rem, 4vw, 3rem); overflow: clip; }
+.s-giant { top: calc(var(--hdr-h) + 1rem); right: -3vw; font-size: clamp(6rem, 22vw, 22rem); }
+.s-intro-in { position: relative; z-index: 1; display: grid; gap: 1.6rem; justify-items: start; }
+.s-title { max-width: 16ch; font-family: var(--display); font-weight: 400; font-size: clamp(3rem, 1.4rem + 6.4vw, 7.4rem); line-height: .94; letter-spacing: -.03em; }
+.s-title em { color: var(--red); }
+
+/* ── 2. SCONTRINI APPESI ── */
+.rc-wall { display: grid; gap: clamp(3.5rem, 6vw, 4rem); justify-items: center; padding: clamp(3rem, 6vw, 5rem) var(--gut) clamp(4rem, 8vw, 7rem); perspective: 1400px;
+  background: radial-gradient(120% 70% at 30% 0%, rgba(255, 255, 255, .55), transparent 60%); }
+@media (min-width: 900px) { .rc-wall { grid-template-columns: repeat(3, minmax(0, 20rem)); justify-content: center; align-items: start; gap: clamp(1.5rem, 3.5vw, 3.4rem); } .rc:nth-child(2) { margin-top: 2.6rem; } .rc:nth-child(3) { margin-top: .8rem; } }
+.rc { position: relative; width: min(100%, 20rem); transform-origin: 50% 1.1rem; rotate: var(--tilt, 0deg); filter: drop-shadow(0 22px 22px rgba(17, 17, 17, .13)) drop-shadow(0 2px 3px rgba(17, 17, 17, .08)); will-change: transform; }
+.rc-paper { position: relative; display: grid; gap: .75rem; padding: 2.2rem 1.4rem 2.4rem; background: #FBFAF7; color: #2a2a2a; font-family: var(--mono); font-size: .8rem; line-height: 1.45; letter-spacing: .04em; text-transform: uppercase; text-align: center;
+  -webkit-mask: linear-gradient(#000, #000) top / 100% calc(100% - 13px) no-repeat, url('/assets/img/scontrino-strappo.svg') bottom left / 240px 14px repeat-x;
+  mask: linear-gradient(#000, #000) top / 100% calc(100% - 13px) no-repeat, url('/assets/img/scontrino-strappo.svg') bottom left / 240px 14px repeat-x;
+  transform-style: preserve-3d; will-change: transform; }
+/* piega leggera della carta */
+.rc-paper::after { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, .035) 52%, rgba(255, 255, 255, .35) 56%, rgba(0, 0, 0, 0) 70%); pointer-events: none; }
+.rc-pin { position: absolute; z-index: 2; left: 50%; top: .25rem; width: 1.15rem; height: 1.15rem; margin-left: -.575rem; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #fff 0 12%, #F6C9D3 26%, #E89AAE 60%, #C9748B 100%); box-shadow: 0 4px 6px rgba(17, 17, 17, .25); }
+.rc-pin::after { content: ""; position: absolute; left: 50%; top: 85%; width: 2px; height: .5rem; margin-left: -1px; background: linear-gradient(#B3B3B3, rgba(0, 0, 0, 0)); }
+.rc-brand { letter-spacing: .3em; font-weight: 500; }
+.rc-rule { overflow: hidden; white-space: nowrap; color: #8a8a8a; letter-spacing: .1em; line-height: 1; }
+.rc-title { font-family: var(--mono); font-weight: 500; font-size: 1.15rem; letter-spacing: .14em; line-height: 1.25; }
+.rc-title span { display: block; font-size: .78rem; font-weight: 400; color: #6b6b6b; }
+.rc-ph { aspect-ratio: 1; overflow: hidden; border-radius: 6px; background: #e8e2d9; }
+.rc-ph img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.9) contrast(1.02); }
+.rc-list { display: grid; gap: .55rem; text-align: left; }
+.rc-list li { display: flex; justify-content: space-between; gap: 1rem; }
+.rc-list b { font-weight: 500; white-space: nowrap; }
+.rc-todo { font-size: .66rem; letter-spacing: .1em; color: #6b6b6b; outline: 1px dashed rgba(17, 17, 17, .4); outline-offset: 2px; justify-self: center; padding: 0 .3rem; }
+.rc-cta { justify-self: center; padding: .45rem .2rem; font-weight: 500; letter-spacing: .14em; border-bottom: 1px solid currentColor; transition: color .3s; }
+.rc-cta:hover { color: var(--red); }
+
+/* ── 3. LISTINO ── */
+.ls { background: #ECE7DF; }
+.ls-grid { display: grid; gap: 3rem; }
+@media (min-width: 900px) { .ls-grid { grid-template-columns: .9fr 1.1fr; align-items: center; gap: clamp(3rem, 7vw, 8rem); } }
+.ls-text { display: grid; gap: 1.5rem; justify-items: start; }
+.ls-card { padding: clamp(2rem, 5vw, 3.6rem) clamp(1.4rem, 4vw, 3.4rem); background: #FBFAF7; border-radius: 6px; box-shadow: 0 40px 60px -40px rgba(17, 17, 17, .4), 0 2px 6px rgba(17, 17, 17, .06); }
+.ls-head { margin-bottom: clamp(1.6rem, 3vw, 2.4rem); font-family: var(--giant); font-weight: 800; font-size: clamp(2rem, 1.4rem + 2.4vw, 3.2rem); line-height: 1; letter-spacing: -.02em; text-transform: uppercase; }
+.ls-head em { font-family: var(--italic); font-weight: 400; text-transform: none; letter-spacing: 0; color: var(--red); }
+.ls-list li { display: grid; grid-template-columns: auto 1fr auto; align-items: baseline; gap: .8rem; padding-block: 1rem; border-bottom: 1px solid var(--line); font-size: .92rem; font-weight: 400; letter-spacing: .08em; text-transform: uppercase; }
+.ls-list li:first-child { border-top: 1px solid var(--line); }
+.ls-list i { align-self: center; height: 1px; background: transparent; }
+.ls-list b { font-family: var(--mono); font-weight: 500; font-variant-numeric: tabular-nums; letter-spacing: .04em; }
+.ls-list b span { display: inline-block; min-width: 2ch; }
+.ls-foot { margin-top: 1.4rem; font-family: var(--mono); font-size: .74rem; letter-spacing: .08em; color: var(--ink-2); }
+
+/* ── 4. CORSI E ARMOCROMIA ── */
+.corsi { overflow: hidden; }
+.corsi .g1 { top: clamp(2rem, 5vw, 4rem); left: -1.5vw; font-size: clamp(7rem, 24vw, 24rem); }
+.corsi .g2 { bottom: clamp(1rem, 4vw, 3rem); right: -2vw; font-size: clamp(7rem, 24vw, 24rem); }
+.corsi-grid { position: relative; z-index: 1; display: grid; gap: 3.5rem; }
+@media (min-width: 900px) { .corsi-grid { grid-template-columns: 1fr 1fr; align-items: center; gap: clamp(3rem, 7vw, 8rem); } }
+.corsi-text { display: grid; gap: 1.6rem; justify-items: start; }
+.corsi-list { display: grid; width: 100%; margin-block: .6rem 1rem; border-top: 1px solid var(--line); }
+.corsi-list li { display: grid; grid-template-columns: 2.6rem 1fr; gap: 1rem; padding-block: 1.1rem; border-bottom: 1px solid var(--line); }
+.corsi-list li::before { content: ""; width: 1.6rem; height: 1px; margin-top: .85rem; background: var(--red); }
+.corsi-media { position: relative; min-height: 32rem; }
+.corsi-a { position: relative; width: 70%; margin-left: auto; aspect-ratio: 9 / 15; }
+.corsi-a video { object-position: 50% 30%; }
+.corsi-b { position: absolute; left: 0; bottom: -2.5rem; width: 46%; aspect-ratio: 3 / 4; border: 6px solid var(--paper); border-radius: calc(var(--r) + 6px); }
+.rc { transition: filter .5s var(--ease-out); }
+.rc.is-up { filter: drop-shadow(0 40px 34px rgba(17, 17, 17, .2)) drop-shadow(0 4px 6px rgba(17, 17, 17, .1)); }

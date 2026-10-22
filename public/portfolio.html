@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Portfolio | Federica Siviero makeup artist a Torino</title>
-<meta name="description" content="Spose, editoriali e beauty: una selezione dei lavori di Federica Siviero, makeup artist a Torino.">
+<meta name="description" content="Spose, editoriali e beauty: i lavori di Federica Siviero, makeup artist a Torino.">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#F4F1EC">
 <link rel="canonical" href="https://dominio-da-completare.example/portfolio">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="it_IT">
 <meta property="og:title" content="Portfolio | Federica Siviero makeup artist a Torino">
-<meta property="og:description" content="Spose, editoriali e beauty: una selezione dei lavori di Federica Siviero, makeup artist a Torino.">
+<meta property="og:description" content="Spose, editoriali e beauty: i lavori di Federica Siviero, makeup artist a Torino.">
 <meta property="og:image" content="https://dominio-da-completare.example/assets/img/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -24,7 +24,8 @@
 <link rel="preload" href="/assets/fonts/archivo-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/instrument-serif-latin-400-italic.woff2" as="font" type="font/woff2" crossorigin>
 <script src="/assets/js/boot.js?v=e8bb1ff9"></script>
-<link rel="stylesheet" href="/assets/css/site.css?v=5ae5a242">
+<link rel="stylesheet" href="/assets/css/site.css?v=296ffd06">
+<link rel="stylesheet" href="/assets/css/portfolio.css?v=37d011bb">
 
 </head>
 <body class="pg-portfolio">
@@ -69,21 +70,87 @@
 <p class="toast" role="status" aria-live="polite" data-toast></p>
 <div class="cur" aria-hidden="true"><div class="cur-dot"><span>Vedi</span></div></div>
 <div class="grain" aria-hidden="true"></div>
+<div class="vw" role="dialog" aria-modal="true" aria-label="Foto a schermo intero" data-vw>
+  <div class="vw-stage"><img class="vw-img" alt="" data-vw-img></div>
+  <div class="vw-bar"><span class="vw-cap" data-vw-cap></span><span data-vw-n></span></div>
+  <button class="vw-btn vw-x" type="button" aria-label="Chiudi" data-vw-x><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <button class="vw-btn vw-prev" type="button" aria-label="Foto precedente" data-vw-prev><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+  <button class="vw-btn vw-next" type="button" aria-label="Foto successiva" data-vw-next><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+</div>
 
 <main id="contenuto">
-<!-- FASE 1: la rivista a doppia pagina e la griglia con filtri arrivano nella fase 4. -->
-<section class="wip" data-wip>
-  <p class="eyebrow">Portfolio · fase 1 di 4</p>
-  <h1 class="wip-title" data-split>Il <em>portfolio</em></h1>
-  <p class="wip-note">Pagina in costruzione: qui arriveranno la rivista a doppia pagina, la griglia con i filtri Tutti, Sposa, Editoriale e Beauty, e l'espansione a schermo intero.</p>
-  <p class="wip-row">
-    <a class="btn btn--line magnetic" href="/servizi">Torna ai servizi</a>
-    <a class="btn magnetic" href="/">Vai alla home</a>
-  </p>
+<!-- 1. RIVISTA APERTA: titolo in alto, due pagine; scorrendo le pagine di destra si girano e scoprono la doppia pagina dopo -->
+<section class="mag" aria-labelledby="h1" data-mag>
+  <div class="mag-pin">
+    <header class="mag-head">
+      <p class="eyebrow" data-fade="0.3">Portfolio</p>
+      <h1 class="mag-title" id="h1" data-split>I miei <em>lavori</em></h1>
+    </header>
+    <div class="mag-book" data-book aria-hidden="true">
+      <div class="mag-page mag-page--l"><div class="mag-in"><p class="mag-run"><span>Federica Siviero</span><span>Spose</span></p><span class="mag-ph"><picture><source type="image/webp" srcset="/assets/img/palazzo-ritratto-braccia-480.webp 480w, /assets/img/palazzo-ritratto-braccia-800.webp 800w, /assets/img/palazzo-ritratto-braccia-1200.webp 1200w" sizes="(min-width: 900px) 34vw, 44vw"><img src="/assets/img/palazzo-ritratto-braccia-800.jpg" width="800" height="800" alt="" loading="lazy" decoding="async"></picture></span><p class="mag-folio">01</p></div></div>
+      <div class="mag-page mag-page--r"><div class="mag-in"><p class="mag-run"><span>Federica Siviero</span><span>Beauty</span></p><span class="mag-ph"><picture><source type="image/webp" srcset="/assets/img/ritratto-rosa-tatuaggio-480.webp 480w, /assets/img/ritratto-rosa-tatuaggio-800.webp 800w, /assets/img/ritratto-rosa-tatuaggio-1200.webp 1200w" sizes="(min-width: 900px) 34vw, 44vw"><img src="/assets/img/ritratto-rosa-tatuaggio-800.jpg" width="800" height="1067" alt="" loading="lazy" decoding="async"></picture></span><p class="mag-folio">06</p></div></div>
+      <div class="mag-leaf" data-leaf>
+        <div class="mag-face mag-face--front"><div class="mag-in"><p class="mag-run"><span>Federica Siviero</span><span>Spose</span></p><span class="mag-ph"><picture><source type="image/webp" srcset="/assets/img/sposa-bouquet-profilo-480.webp 480w, /assets/img/sposa-bouquet-profilo-800.webp 800w, /assets/img/sposa-bouquet-profilo-1200.webp 1200w" sizes="(min-width: 900px) 34vw, 44vw"><img src="/assets/img/sposa-bouquet-profilo-800.jpg" width="800" height="1067" alt="" loading="lazy" decoding="async"></picture></span><p class="mag-folio">02</p></div><i class="mag-shade"></i></div>
+        <div class="mag-face mag-face--back"><div class="mag-in"><p class="mag-run"><span>Federica Siviero</span><span>Beauty</span></p><span class="mag-ph"><picture><source type="image/webp" srcset="/assets/img/ritratto-velo-spalla-480.webp 480w, /assets/img/ritratto-velo-spalla-800.webp 800w, /assets/img/ritratto-velo-spalla-1200.webp 1200w" sizes="(min-width: 900px) 34vw, 44vw"><img src="/assets/img/ritratto-velo-spalla-800.jpg" width="800" height="1067" alt="" loading="lazy" decoding="async"></picture></span><p class="mag-folio">03</p></div><i class="mag-shade"></i></div>
+      </div>
+      <div class="mag-leaf" data-leaf>
+        <div class="mag-face mag-face--front"><div class="mag-in"><p class="mag-run"><span>Federica Siviero</span><span>Editoriale</span></p><span class="mag-ph"><picture><source type="image/webp" srcset="/assets/img/ritratto-turbante-480.webp 480w, /assets/img/ritratto-turbante-800.webp 800w, /assets/img/ritratto-turbante-1200.webp 1200w" sizes="(min-width: 900px) 34vw, 44vw"><img src="/assets/img/ritratto-turbante-800.jpg" width="800" height="1067" alt="" loading="lazy" decoding="async"></picture></span><p class="mag-folio">04</p></div><i class="mag-shade"></i></div>
+        <div class="mag-face mag-face--back"><div class="mag-in"><p class="mag-run"><span>Federica Siviero</span><span>Spose</span></p><span class="mag-ph"><picture><source type="image/webp" srcset="/assets/img/sposa-finestra-480.webp 480w, /assets/img/sposa-finestra-800.webp 800w, /assets/img/sposa-finestra-1200.webp 1200w" sizes="(min-width: 900px) 34vw, 44vw"><img src="/assets/img/sposa-finestra-800.jpg" width="800" height="1067" alt="" loading="lazy" decoding="async"></picture></span><p class="mag-folio">05</p></div><i class="mag-shade"></i></div>
+      </div>
+      <i class="mag-spine"></i>
+    </div>
+    <p class="mag-hint" data-fade="0.8">Scorri per sfogliare</p>
+  </div>
 </section>
-<section class="wip-photos wip-photos--two" aria-label="Foto di prova">
-  <figure data-cursor="vedi"><picture><source type="image/webp" srcset="/assets/img/ritratto-camicia-pizzo-480.webp 480w, /assets/img/ritratto-camicia-pizzo-800.webp 800w, /assets/img/ritratto-camicia-pizzo-1200.webp 1200w" sizes="(min-width: 900px) 30vw, 80vw"><img src="/assets/img/ritratto-camicia-pizzo-800.jpg" width="800" height="1067" alt="Donna con capelli scuri e camicia bianca appoggiata a una tenda, sguardo in camera" loading="lazy" decoding="async"></picture></figure>
-  <figure data-cursor="vedi"><picture><source type="image/webp" srcset="/assets/img/sposa-sorriso-bouquet-480.webp 480w, /assets/img/sposa-sorriso-bouquet-800.webp 800w, /assets/img/sposa-sorriso-bouquet-1200.webp 1200w" sizes="(min-width: 900px) 30vw, 80vw"><img src="/assets/img/sposa-sorriso-bouquet-800.jpg" width="800" height="1067" alt="Sposa sorridente che guarda il bouquet, trucco occhi luminoso e labbra rosate" loading="lazy" decoding="async"></picture></figure>
+
+<!-- 2. TUTTI I LAVORI: griglia asimmetrica con filtri (GSAP Flip); un clic apre la foto a schermo intero -->
+<section class="sez pg" aria-labelledby="pgTitle">
+  <div class="wrap">
+    <div class="pg-head">
+      <div>
+        <p class="eyebrow" data-fade>Tutti i lavori</p>
+        <h2 class="title" id="pgTitle" data-lines>Spose, editoriali <em>e beauty.</em></h2>
+      </div>
+      <div class="pg-filters" role="group" aria-label="Filtra i lavori" data-filters>
+        <button type="button" aria-pressed="true" data-filter="tutti">Tutti <sup>17</sup></button>
+        <button type="button" aria-pressed="false" data-filter="sposa">Sposa <sup>8</sup></button>
+        <button type="button" aria-pressed="false" data-filter="editoriale">Editoriale <sup>4</sup></button>
+        <button type="button" aria-pressed="false" data-filter="beauty">Beauty <sup>5</sup></button>
+      </div>
+    </div>
+    <p class="sr" aria-live="polite" data-filter-status></p>
+    <ul class="pg-grid" data-pg data-view-group>
+      <li class="pg-item" data-cat="sposa"><button type="button" class="pg-btn" data-view data-cursor="vedi" data-full="/assets/img/palazzo-abito-finestra-1200.webp" data-title="Sposa a palazzo"><span class="ph pg-ph"><picture><source type="image/webp" srcset="/assets/img/palazzo-abito-finestra-480.webp 480w, /assets/img/palazzo-abito-finestra-800.webp 800w, /assets/img/palazzo-abito-finestra-1200.webp 1200w" sizes="(min-width: 900px) 30vw, 46vw"><img src="/assets/img/palazzo-abito-finestra-800.jpg" width="800" height="800" alt="Sposa in abito a sirena con maniche di tulle, in un salone d'epoca illuminato dalla finestra" loading="lazy" decoding="async"></picture></span><span class="pg-cap"><i>01</i> Sposa a palazzo<b>Sposa</b></span></button></li>
+      <li class="pg-item" data-cat="beauty"><button type="button" class="pg-btn" data-view data-cursor="vedi" data-full="/assets/img/ritratto-velo-spalla-1200.webp" data-title="Ritratto con velo"><span class="ph pg-ph"><picture><source type="image/webp" srcset="/assets/img/ritratto-velo-spalla-480.webp 480w, /assets/img/ritratto-velo-spalla-800.webp 800w, /assets/img/ritratto-velo-spalla-1200.webp 1200w" sizes="(min-width: 900px) 30vw, 46vw"><img src="/assets/img/ritratto-velo-spalla-800.jpg" width="800" height="1067" alt="Donna con capelli biondi mossi e tatuaggi che si volta tra veli bianchi" loading="lazy" decoding="async"></picture></span><span class="pg-cap"><i>02</i> Ritratto con velo<b>Beauty</b></span></button></li>
+      <li class="pg-item" data-cat="editoriale"><button type="button" class="pg-btn" data-view data-cursor="vedi" data-full="/assets/img/palazzo-profilo-luce-1200.webp" data-title="Profilo nella luce"><span class="ph pg-ph"><picture><source type="image/webp" srcset="/assets/img/palazzo-profilo-luce-480.webp 480w, /assets/img/palazzo-profilo-luce-800.webp 800w, /assets/img/palazzo-profilo-luce-1200.webp 1200w" sizes="(min-width: 900px) 30vw, 46vw"><img src="/assets/img/palazzo-profilo-luce-800.jpg" width="800" height="800" alt="Sposa di profilo con gli occhi chiusi nella luce di una finestra" loading="lazy" decoding="async"></picture></span><span class="pg-cap"><i>03</i> Profilo nella luce<b>Editoriale</b></span></button></li>
+      <li class="pg-item" data-cat="sposa"><button type="button" class="pg-btn" data-view data-cursor="vedi" data-full="/assets/img/sposa-luci-fiori-1200.webp" data-title="Tra le luci e i fiori"><span class="ph pg-ph"><picture><source type="image/webp" srcset="/assets/img/sposa-luci-fiori-480.webp 480w, /assets/img/sposa-luci-fiori-800.webp 800w, /assets/img/sposa-luci-fiori-1200.webp 1200w" sizes="(min-width: 900px) 30vw, 46vw"><img src="/assets/img/sposa-luci-fiori-800.jpg" width="800" height="1067" alt="Sposa in abito bianco tra composizioni di fiori colorati e tende di luci calde" loading="lazy" decoding="async"></picture></span><span class="pg-cap"><i>04</i> Tra le luci e i fiori<b>Sposa</b></span></button></li>
+      <li class="pg-item" data-cat="beauty"><button type="button" class="pg-btn" data-view data-cursor="vedi" data-full="/assets/img/ritratto-rosa-tatuaggio-1200.webp" data-title="Ritratto in bianco"><span class="ph pg-ph"><picture><source type="image/webp" srcset="/assets/img/ritratto-rosa-tatuaggio-480.webp 480w, /assets/img/ritratto-rosa-tatuaggio-800.webp 800w, /assets/img/ritratto-rosa-tatuaggio-1200.webp 1200w" sizes="(min-width: 900px) 30vw, 46vw"><img src="/assets/img/ritratto-rosa-tatuaggio-800.jpg" width="800" height="1067" alt="Donna bionda con collana di perle e rossetto corallo, occhi chiusi, in luce bianca" loading="lazy" decoding="async"></picture></span><span class="pg-cap"><i>05</i> Ritratto in bianco<b>Beauty</b></span></button></li>
+      <li class="pg-item" data-cat="sposa"><button type="button" class="pg-btn" data-view data-cursor="vedi" data-full="/assets/img/palazzo-mano-alzata-1200.webp" data-title="Luce di finestra"><span class="ph pg-ph"><picture><source type="image/webp" srcset="/assets/img/palazzo-mano-alzata-480.webp 480w, /assets/img/palazzo-mano-alzata-800.webp 800w, /assets/img/palazzo-mano-alzata-1200.webp 1200w" sizes="(min-width: 900px) 30vw, 46vw"><img src="/assets/img/palazzo-mano-alzata-800.jpg" width="800" height="800" alt="Sposa con capelli raccolti e labbra pesca che alza la mano verso la luce" loading="lazy" decoding="async"></picture></span><span class="pg-cap"><i>06</i> Luce di finestra<b>Sposa</b></span></button></li>
+      <li class="pg-item" data-cat="editoriale"><button type="button" class="pg-btn" data-view data-cursor="vedi" data-full="/assets/img/ritratto-turbante-1200.webp" data-title="Turbante avorio"><span class="ph pg-ph"><picture><source type="image/webp" srcset="/assets/img/ritratto-turbante-480.webp 480w, /assets/img/ritratto-turbante-800.webp 800w, /assets/img/ritratto-turbante-1200.webp 1200w" sizes="(min-width: 900px) 30vw, 46vw"><img src="/assets/img/ritratto-turbante-800.jpg" width="800" height="1067" alt="Donna con turbante avorio e bracciale dorato, sdraiata, ritratta dall'alto con trucco nei toni caldi" loading="lazy" decoding="async"></picture></span><span class="pg-cap"><i>07</i> Turbante avorio<b>Editoriale</b></span></button></li>
+      <li class="pg-item" data-cat="sposa"><button type="button" class="pg-btn" data-view data-cursor="vedi" data-full="/assets/img/sposa-sorriso-bouquet-1200.webp" data-title="Il mattino del sì"><span class="ph pg-ph"><picture><source type="image/webp" srcset="/assets/img/sposa-sorriso-bouquet-480.webp 480w, /assets/img/sposa-sorriso-bouquet-800.webp 800w, /assets/img/sposa-sorriso-bouquet-1200.webp 1200w" sizes="(min-width: 900px) 30vw, 46vw"><img src="/assets/img/sposa-sorriso-bouquet-800.jpg" width="800" height="1067" alt="Sposa sorridente che guarda il bouquet, trucco occhi luminoso e labbra rosate" loading="lazy" decoding="async"></picture></span><span class="pg-cap"><i>08</i> Il mattino del sì<b>Sposa</b></span></button></li>
+      <li class="pg-item" data-cat="beauty"><button type="button" class="pg-btn" data-view data-cursor="vedi" data-full="/assets/img/ritratto-camicia-pizzo-1200.webp" data-title="Ritratto con camicia"><span class="ph pg-ph"><picture><source type="image/webp" srcset="/assets/img/ritratto-camicia-pizzo-480.webp 480w, /assets/img/ritratto-camicia-pizzo-800.webp 800w, /assets/img/ritratto-camicia-pizzo-1200.webp 1200w" sizes="(min-width: 900px) 30vw, 46vw"><img src="/assets/img/ritratto-camicia-pizzo-800.jpg" width="800" height="1067" alt="Donna con capelli scuri e camicia bianca appoggiata a una tenda, sguardo in camera" loading="lazy" decoding="async"></picture></span><span class="pg-cap"><i>09</i> Ritratto con camicia<b>Beauty</b></span></button></li>
+      <li class="pg-item" data-cat="editoriale"><button type="button" class="pg-btn" data-view data-cursor="vedi" data-full="/assets/img/palazzo-primo-piano-orecchino-1200.webp" data-title="Primo piano"><span class="ph pg-ph"><picture><source type="image/webp" srcset="/assets/img/palazzo-primo-piano-orecchino-480.webp 480w, /assets/img/palazzo-primo-piano-orecchino-800.webp 800w, /assets/img/palazzo-primo-piano-orecchino-1200.webp 1200w" sizes="(min-width: 900px) 30vw, 46vw"><img src="/assets/img/palazzo-primo-piano-orecchino-800.jpg" width="800" height="800" alt="Primo piano di una sposa con orecchino a cerchio e labbra lucide color pesca" loading="lazy" decoding="async"></picture></span><span class="pg-cap"><i>10</i> Primo piano<b>Editoriale</b></span></button></li>
+      <li class="pg-item" data-cat="sposa"><button type="button" class="pg-btn" data-view data-cursor="vedi" data-full="/assets/img/sposa-finestra-1200.webp" data-title="Sposa alla finestra"><span class="ph pg-ph"><picture><source type="image/webp" srcset="/assets/img/sposa-finestra-480.webp 480w, /assets/img/sposa-finestra-800.webp 800w, /assets/img/sposa-finestra-1200.webp 1200w" sizes="(min-width: 900px) 30vw, 46vw"><img src="/assets/img/sposa-finestra-800.jpg" width="800" height="1067" alt="Sposa con bouquet in una stanza con muri di pietra, illuminata dalla finestra" loading="lazy" decoding="async"></picture></span><span class="pg-cap"><i>11</i> Sposa alla finestra<b>Sposa</b></span></button></li>
+      <li class="pg-item" data-cat="beauty"><button type="button" class="pg-btn" data-view data-cursor="vedi" data-full="/assets/img/ritratto-primo-piano-1200.webp" data-title="Sorriso"><span class="ph pg-ph"><picture><source type="image/webp" srcset="/assets/img/ritratto-primo-piano-480.webp 480w, /assets/img/ritratto-primo-piano-800.webp 800w, /assets/img/ritratto-primo-piano-1200.webp 1200w" sizes="(min-width: 900px) 30vw, 46vw"><img src="/assets/img/ritratto-primo-piano-800.jpg" width="800" height="1067" alt="Donna con capelli biondi mossi e tatuaggi sulle braccia che sorride guardando in camera" loading="lazy" decoding="async"></picture></span><span class="pg-cap"><i>12</i> Sorriso<b>Beauty</b></span></button></li>
+      <li class="pg-item" data-cat="sposa"><button type="button" class="pg-btn" data-view data-cursor="vedi" data-full="/assets/img/palazzo-ritratto-braccia-1200.webp" data-title="Base pelle di pesca"><span class="ph pg-ph"><picture><source type="image/webp" srcset="/assets/img/palazzo-ritratto-braccia-480.webp 480w, /assets/img/palazzo-ritratto-braccia-800.webp 800w, /assets/img/palazzo-ritratto-braccia-1200.webp 1200w" sizes="(min-width: 900px) 30vw, 46vw"><img src="/assets/img/palazzo-ritratto-braccia-800.jpg" width="800" height="800" alt="Sposa con pelle luminosa e occhi intensi, braccia incrociate sulle spalle" loading="lazy" decoding="async"></picture></span><span class="pg-cap"><i>13</i> Base pelle di pesca<b>Sposa</b></span></button></li>
+      <li class="pg-item" data-cat="editoriale"><button type="button" class="pg-btn" data-view data-cursor="vedi" data-full="/assets/img/ritratto-dall-alto-1200.webp" data-title="Luce dall'alto"><span class="ph pg-ph"><picture><source type="image/webp" srcset="/assets/img/ritratto-dall-alto-480.webp 480w, /assets/img/ritratto-dall-alto-800.webp 800w, /assets/img/ritratto-dall-alto-1200.webp 1200w" sizes="(min-width: 900px) 30vw, 46vw"><img src="/assets/img/ritratto-dall-alto-800.jpg" width="800" height="1067" alt="Donna sdraiata su lenzuola bianche fotografata dall'alto, con trucco occhi caldo e capelli mossi" loading="lazy" decoding="async"></picture></span><span class="pg-cap"><i>14</i> Luce dall'alto<b>Editoriale</b></span></button></li>
+      <li class="pg-item" data-cat="sposa"><button type="button" class="pg-btn" data-view data-cursor="vedi" data-full="/assets/img/sposa-bouquet-profilo-1200.webp" data-title="Profilo con bouquet"><span class="ph pg-ph"><picture><source type="image/webp" srcset="/assets/img/sposa-bouquet-profilo-480.webp 480w, /assets/img/sposa-bouquet-profilo-800.webp 800w, /assets/img/sposa-bouquet-profilo-1200.webp 1200w" sizes="(min-width: 900px) 30vw, 46vw"><img src="/assets/img/sposa-bouquet-profilo-800.jpg" width="800" height="1067" alt="Sposa di profilo con gli occhi chiusi accanto al bouquet di rose pesca, ranuncoli e fiori azzurri" loading="lazy" decoding="async"></picture></span><span class="pg-cap"><i>15</i> Profilo con bouquet<b>Sposa</b></span></button></li>
+      <li class="pg-item" data-cat="beauty"><button type="button" class="pg-btn" data-view data-cursor="vedi" data-full="/assets/img/ritratto-camicia-cubo-1200.webp" data-title="Ritratto in studio"><span class="ph pg-ph"><picture><source type="image/webp" srcset="/assets/img/ritratto-camicia-cubo-480.webp 480w, /assets/img/ritratto-camicia-cubo-800.webp 800w, /assets/img/ritratto-camicia-cubo-1200.webp 1200w" sizes="(min-width: 900px) 30vw, 46vw"><img src="/assets/img/ritratto-camicia-cubo-800.jpg" width="800" height="1067" alt="Donna bionda seduta su un cubo bianco con camicia di lino, sguardo verso il basso" loading="lazy" decoding="async"></picture></span><span class="pg-cap"><i>16</i> Ritratto in studio<b>Beauty</b></span></button></li>
+      <li class="pg-item" data-cat="sposa"><button type="button" class="pg-btn" data-view data-cursor="vedi" data-full="/assets/img/sposa-vestaglia-abito-1200.webp" data-title="Prima dell'abito"><span class="ph pg-ph"><picture><source type="image/webp" srcset="/assets/img/sposa-vestaglia-abito-480.webp 480w, /assets/img/sposa-vestaglia-abito-800.webp 800w, /assets/img/sposa-vestaglia-abito-1200.webp 1200w" sizes="(min-width: 900px) 30vw, 46vw"><img src="/assets/img/sposa-vestaglia-abito-800.jpg" width="800" height="1067" alt="Sposa in vestaglia bianca accanto all'abito appeso, in una stanza con muri di mattoni" loading="lazy" decoding="async"></picture></span><span class="pg-cap"><i>17</i> Prima dell'abito<b>Sposa</b></span></button></li>
+    </ul>
+    <div class="pg-after">
+      <p data-fade>Altri lavori, ogni settimana, <em>su Instagram.</em></p>
+      <a class="link" href="https://www.instagram.com/federicasiviero_beauty/" target="_blank" rel="noopener" data-fade>@federicasiviero_beauty</a>
+    </div>
+  </div>
+</section>
+
+<!-- 3. PRENOTIAMO? -->
+<section class="book" aria-labelledby="bookTitle">
+  <p class="eyebrow" data-fade>Contatti</p>
+  <h2 class="book-word" id="bookTitle" data-lines>Prenotiamo<em>?</em></h2>
+  <p data-fade>Ti piace uno di questi lavori? Scrivimi la tua data: ti rispondo io e confermiamo insieme disponibilità e dettagli.</p>
+  <a class="book-cta magnetic" href="#prenota" data-wa data-wa-msg="Ciao Federica, ho visto il portfolio e vorrei prenotare.">Scrivimi</a>
 </section>
 </main>
 <footer class="ft">
@@ -109,8 +176,10 @@
 <script defer src="/assets/vendor/gsap.min.js?v=96c01b81"></script>
 <script defer src="/assets/vendor/ScrollTrigger.min.js?v=30821939"></script>
 <script defer src="/assets/vendor/SplitText.min.js?v=5e519ea2"></script>
+<script defer src="/assets/vendor/Flip.min.js?v=d2d2f30a"></script>
 <script defer src="/assets/vendor/lenis.min.js?v=978450a5"></script>
 <script defer src="/assets/js/config.js?v=72627ee5"></script>
-<script defer src="/assets/js/site.js?v=78ae3572"></script>
+<script defer src="/assets/js/site.js?v=5d092a48"></script>
+<script defer src="/assets/js/portfolio.js?v=44dd2ba3"></script>
 </body>
 </html>
