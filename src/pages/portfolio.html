@@ -1,21 +1,83 @@
 ---
 title: Portfolio | Federica Siviero makeup artist a Torino
-description: Spose, editoriali e beauty: una selezione dei lavori di Federica Siviero, makeup artist a Torino.
+description: Spose, editoriali e beauty: i lavori di Federica Siviero, makeup artist a Torino.
 path: /portfolio
 out: portfolio.html
 nav: portfolio
+css: portfolio
+js: portfolio
+libs: Flip
 ---
-<!-- FASE 1: la rivista a doppia pagina e la griglia con filtri arrivano nella fase 4. -->
-<section class="wip" data-wip>
-  <p class="eyebrow">Portfolio · fase 1 di 4</p>
-  <h1 class="wip-title" data-split>Il <em>portfolio</em></h1>
-  <p class="wip-note">Pagina in costruzione: qui arriveranno la rivista a doppia pagina, la griglia con i filtri Tutti, Sposa, Editoriale e Beauty, e l'espansione a schermo intero.</p>
-  <p class="wip-row">
-    <a class="btn btn--line magnetic" href="/servizi">Torna ai servizi</a>
-    <a class="btn magnetic" href="/">Vai alla home</a>
-  </p>
+<!-- 1. RIVISTA APERTA: titolo in alto, due pagine; scorrendo le pagine di destra si girano e scoprono la doppia pagina dopo -->
+<section class="mag" aria-labelledby="h1" data-mag>
+  <div class="mag-pin">
+    <header class="mag-head">
+      <p class="eyebrow" data-fade="0.3">Portfolio</p>
+      <h1 class="mag-title" id="h1" data-split>I miei <em>lavori</em></h1>
+    </header>
+    <div class="mag-book" data-book aria-hidden="true">
+      <div class="mag-page mag-page--l"><div class="mag-in"><p class="mag-run"><span>Federica Siviero</span><span>Spose</span></p><span class="mag-ph">{{pic:palazzo-ritratto-braccia|(min-width: 900px) 34vw, 44vw|}}</span><p class="mag-folio">01</p></div></div>
+      <div class="mag-page mag-page--r"><div class="mag-in"><p class="mag-run"><span>Federica Siviero</span><span>Beauty</span></p><span class="mag-ph">{{pic:ritratto-rosa-tatuaggio|(min-width: 900px) 34vw, 44vw|}}</span><p class="mag-folio">06</p></div></div>
+      <div class="mag-leaf" data-leaf>
+        <div class="mag-face mag-face--front"><div class="mag-in"><p class="mag-run"><span>Federica Siviero</span><span>Spose</span></p><span class="mag-ph">{{pic:sposa-bouquet-profilo|(min-width: 900px) 34vw, 44vw|}}</span><p class="mag-folio">02</p></div><i class="mag-shade"></i></div>
+        <div class="mag-face mag-face--back"><div class="mag-in"><p class="mag-run"><span>Federica Siviero</span><span>Beauty</span></p><span class="mag-ph">{{pic:ritratto-velo-spalla|(min-width: 900px) 34vw, 44vw|}}</span><p class="mag-folio">03</p></div><i class="mag-shade"></i></div>
+      </div>
+      <div class="mag-leaf" data-leaf>
+        <div class="mag-face mag-face--front"><div class="mag-in"><p class="mag-run"><span>Federica Siviero</span><span>Editoriale</span></p><span class="mag-ph">{{pic:ritratto-turbante|(min-width: 900px) 34vw, 44vw|}}</span><p class="mag-folio">04</p></div><i class="mag-shade"></i></div>
+        <div class="mag-face mag-face--back"><div class="mag-in"><p class="mag-run"><span>Federica Siviero</span><span>Spose</span></p><span class="mag-ph">{{pic:sposa-finestra|(min-width: 900px) 34vw, 44vw|}}</span><p class="mag-folio">05</p></div><i class="mag-shade"></i></div>
+      </div>
+      <i class="mag-spine"></i>
+    </div>
+    <p class="mag-hint" data-fade="0.8">Scorri per sfogliare</p>
+  </div>
 </section>
-<section class="wip-photos wip-photos--two" aria-label="Foto di prova">
-  <figure data-cursor="vedi">{{pic:ritratto-camicia-pizzo|(min-width: 900px) 30vw, 80vw|Donna con capelli scuri e camicia bianca appoggiata a una tenda, sguardo in camera}}</figure>
-  <figure data-cursor="vedi">{{pic:sposa-sorriso-bouquet|(min-width: 900px) 30vw, 80vw|Sposa sorridente che guarda il bouquet, trucco occhi luminoso e labbra rosate}}</figure>
+
+<!-- 2. TUTTI I LAVORI: griglia asimmetrica con filtri (GSAP Flip); un clic apre la foto a schermo intero -->
+<section class="sez pg" aria-labelledby="pgTitle">
+  <div class="wrap">
+    <div class="pg-head">
+      <div>
+        <p class="eyebrow" data-fade>Tutti i lavori</p>
+        <h2 class="title" id="pgTitle" data-lines>Spose, editoriali <em>e beauty.</em></h2>
+      </div>
+      <div class="pg-filters" role="group" aria-label="Filtra i lavori" data-filters>
+        <button type="button" aria-pressed="true" data-filter="tutti">Tutti <sup>17</sup></button>
+        <button type="button" aria-pressed="false" data-filter="sposa">Sposa <sup>8</sup></button>
+        <button type="button" aria-pressed="false" data-filter="editoriale">Editoriale <sup>4</sup></button>
+        <button type="button" aria-pressed="false" data-filter="beauty">Beauty <sup>5</sup></button>
+      </div>
+    </div>
+    <p class="sr" aria-live="polite" data-filter-status></p>
+    <ul class="pg-grid" data-pg data-view-group>
+      <li class="pg-item" data-cat="sposa"><button type="button" class="pg-btn" data-view data-cursor="vedi" data-full="/assets/img/palazzo-abito-finestra-1200.webp" data-title="Sposa a palazzo"><span class="ph pg-ph">{{pic:palazzo-abito-finestra|(min-width: 900px) 30vw, 46vw|Sposa in abito a sirena con maniche di tulle, in un salone d'epoca illuminato dalla finestra}}</span><span class="pg-cap"><i>01</i> Sposa a palazzo<b>Sposa</b></span></button></li>
+      <li class="pg-item" data-cat="beauty"><button type="button" class="pg-btn" data-view data-cursor="vedi" data-full="/assets/img/ritratto-velo-spalla-1200.webp" data-title="Ritratto con velo"><span class="ph pg-ph">{{pic:ritratto-velo-spalla|(min-width: 900px) 30vw, 46vw|Donna con capelli biondi mossi e tatuaggi che si volta tra veli bianchi}}</span><span class="pg-cap"><i>02</i> Ritratto con velo<b>Beauty</b></span></button></li>
+      <li class="pg-item" data-cat="editoriale"><button type="button" class="pg-btn" data-view data-cursor="vedi" data-full="/assets/img/palazzo-profilo-luce-1200.webp" data-title="Profilo nella luce"><span class="ph pg-ph">{{pic:palazzo-profilo-luce|(min-width: 900px) 30vw, 46vw|Sposa di profilo con gli occhi chiusi nella luce di una finestra}}</span><span class="pg-cap"><i>03</i> Profilo nella luce<b>Editoriale</b></span></button></li>
+      <li class="pg-item" data-cat="sposa"><button type="button" class="pg-btn" data-view data-cursor="vedi" data-full="/assets/img/sposa-luci-fiori-1200.webp" data-title="Tra le luci e i fiori"><span class="ph pg-ph">{{pic:sposa-luci-fiori|(min-width: 900px) 30vw, 46vw|Sposa in abito bianco tra composizioni di fiori colorati e tende di luci calde}}</span><span class="pg-cap"><i>04</i> Tra le luci e i fiori<b>Sposa</b></span></button></li>
+      <li class="pg-item" data-cat="beauty"><button type="button" class="pg-btn" data-view data-cursor="vedi" data-full="/assets/img/ritratto-rosa-tatuaggio-1200.webp" data-title="Ritratto in bianco"><span class="ph pg-ph">{{pic:ritratto-rosa-tatuaggio|(min-width: 900px) 30vw, 46vw|Donna bionda con collana di perle e rossetto corallo, occhi chiusi, in luce bianca}}</span><span class="pg-cap"><i>05</i> Ritratto in bianco<b>Beauty</b></span></button></li>
+      <li class="pg-item" data-cat="sposa"><button type="button" class="pg-btn" data-view data-cursor="vedi" data-full="/assets/img/palazzo-mano-alzata-1200.webp" data-title="Luce di finestra"><span class="ph pg-ph">{{pic:palazzo-mano-alzata|(min-width: 900px) 30vw, 46vw|Sposa con capelli raccolti e labbra pesca che alza la mano verso la luce}}</span><span class="pg-cap"><i>06</i> Luce di finestra<b>Sposa</b></span></button></li>
+      <li class="pg-item" data-cat="editoriale"><button type="button" class="pg-btn" data-view data-cursor="vedi" data-full="/assets/img/ritratto-turbante-1200.webp" data-title="Turbante avorio"><span class="ph pg-ph">{{pic:ritratto-turbante|(min-width: 900px) 30vw, 46vw|Donna con turbante avorio e bracciale dorato, sdraiata, ritratta dall'alto con trucco nei toni caldi}}</span><span class="pg-cap"><i>07</i> Turbante avorio<b>Editoriale</b></span></button></li>
+      <li class="pg-item" data-cat="sposa"><button type="button" class="pg-btn" data-view data-cursor="vedi" data-full="/assets/img/sposa-sorriso-bouquet-1200.webp" data-title="Il mattino del sì"><span class="ph pg-ph">{{pic:sposa-sorriso-bouquet|(min-width: 900px) 30vw, 46vw|Sposa sorridente che guarda il bouquet, trucco occhi luminoso e labbra rosate}}</span><span class="pg-cap"><i>08</i> Il mattino del sì<b>Sposa</b></span></button></li>
+      <li class="pg-item" data-cat="beauty"><button type="button" class="pg-btn" data-view data-cursor="vedi" data-full="/assets/img/ritratto-camicia-pizzo-1200.webp" data-title="Ritratto con camicia"><span class="ph pg-ph">{{pic:ritratto-camicia-pizzo|(min-width: 900px) 30vw, 46vw|Donna con capelli scuri e camicia bianca appoggiata a una tenda, sguardo in camera}}</span><span class="pg-cap"><i>09</i> Ritratto con camicia<b>Beauty</b></span></button></li>
+      <li class="pg-item" data-cat="editoriale"><button type="button" class="pg-btn" data-view data-cursor="vedi" data-full="/assets/img/palazzo-primo-piano-orecchino-1200.webp" data-title="Primo piano"><span class="ph pg-ph">{{pic:palazzo-primo-piano-orecchino|(min-width: 900px) 30vw, 46vw|Primo piano di una sposa con orecchino a cerchio e labbra lucide color pesca}}</span><span class="pg-cap"><i>10</i> Primo piano<b>Editoriale</b></span></button></li>
+      <li class="pg-item" data-cat="sposa"><button type="button" class="pg-btn" data-view data-cursor="vedi" data-full="/assets/img/sposa-finestra-1200.webp" data-title="Sposa alla finestra"><span class="ph pg-ph">{{pic:sposa-finestra|(min-width: 900px) 30vw, 46vw|Sposa con bouquet in una stanza con muri di pietra, illuminata dalla finestra}}</span><span class="pg-cap"><i>11</i> Sposa alla finestra<b>Sposa</b></span></button></li>
+      <li class="pg-item" data-cat="beauty"><button type="button" class="pg-btn" data-view data-cursor="vedi" data-full="/assets/img/ritratto-primo-piano-1200.webp" data-title="Sorriso"><span class="ph pg-ph">{{pic:ritratto-primo-piano|(min-width: 900px) 30vw, 46vw|Donna con capelli biondi mossi e tatuaggi sulle braccia che sorride guardando in camera}}</span><span class="pg-cap"><i>12</i> Sorriso<b>Beauty</b></span></button></li>
+      <li class="pg-item" data-cat="sposa"><button type="button" class="pg-btn" data-view data-cursor="vedi" data-full="/assets/img/palazzo-ritratto-braccia-1200.webp" data-title="Base pelle di pesca"><span class="ph pg-ph">{{pic:palazzo-ritratto-braccia|(min-width: 900px) 30vw, 46vw|Sposa con pelle luminosa e occhi intensi, braccia incrociate sulle spalle}}</span><span class="pg-cap"><i>13</i> Base pelle di pesca<b>Sposa</b></span></button></li>
+      <li class="pg-item" data-cat="editoriale"><button type="button" class="pg-btn" data-view data-cursor="vedi" data-full="/assets/img/ritratto-dall-alto-1200.webp" data-title="Luce dall'alto"><span class="ph pg-ph">{{pic:ritratto-dall-alto|(min-width: 900px) 30vw, 46vw|Donna sdraiata su lenzuola bianche fotografata dall'alto, con trucco occhi caldo e capelli mossi}}</span><span class="pg-cap"><i>14</i> Luce dall'alto<b>Editoriale</b></span></button></li>
+      <li class="pg-item" data-cat="sposa"><button type="button" class="pg-btn" data-view data-cursor="vedi" data-full="/assets/img/sposa-bouquet-profilo-1200.webp" data-title="Profilo con bouquet"><span class="ph pg-ph">{{pic:sposa-bouquet-profilo|(min-width: 900px) 30vw, 46vw|Sposa di profilo con gli occhi chiusi accanto al bouquet di rose pesca, ranuncoli e fiori azzurri}}</span><span class="pg-cap"><i>15</i> Profilo con bouquet<b>Sposa</b></span></button></li>
+      <li class="pg-item" data-cat="beauty"><button type="button" class="pg-btn" data-view data-cursor="vedi" data-full="/assets/img/ritratto-camicia-cubo-1200.webp" data-title="Ritratto in studio"><span class="ph pg-ph">{{pic:ritratto-camicia-cubo|(min-width: 900px) 30vw, 46vw|Donna bionda seduta su un cubo bianco con camicia di lino, sguardo verso il basso}}</span><span class="pg-cap"><i>16</i> Ritratto in studio<b>Beauty</b></span></button></li>
+      <li class="pg-item" data-cat="sposa"><button type="button" class="pg-btn" data-view data-cursor="vedi" data-full="/assets/img/sposa-vestaglia-abito-1200.webp" data-title="Prima dell'abito"><span class="ph pg-ph">{{pic:sposa-vestaglia-abito|(min-width: 900px) 30vw, 46vw|Sposa in vestaglia bianca accanto all'abito appeso, in una stanza con muri di mattoni}}</span><span class="pg-cap"><i>17</i> Prima dell'abito<b>Sposa</b></span></button></li>
+    </ul>
+    <div class="pg-after">
+      <p data-fade>Altri lavori, ogni settimana, <em>su Instagram.</em></p>
+      <a class="link" href="https://www.instagram.com/federicasiviero_beauty/" target="_blank" rel="noopener" data-fade>@federicasiviero_beauty</a>
+    </div>
+  </div>
+</section>
+
+<!-- 3. PRENOTIAMO? -->
+<section class="book" aria-labelledby="bookTitle">
+  <p class="eyebrow" data-fade>Contatti</p>
+  <h2 class="book-word" id="bookTitle" data-lines>Prenotiamo<em>?</em></h2>
+  <p data-fade>Ti piace uno di questi lavori? Scrivimi la tua data: ti rispondo io e confermiamo insieme disponibilità e dettagli.</p>
+  <a class="book-cta magnetic" href="#prenota" data-wa data-wa-msg="Ciao Federica, ho visto il portfolio e vorrei prenotare.">Scrivimi</a>
 </section>

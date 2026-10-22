@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Federica Siviero | Makeup artist sposa a Torino</title>
-<meta name="description" content="Federica Siviero, makeup artist certificata a Torino: trucco sposa dal 2015, cerimonie, shooting ed editoriali. Torino e Piemonte, disponibile per trasferte.">
+<meta name="description" content="Federica Siviero, makeup artist certificata a Torino: trucco sposa dal 2015, corsi di self makeup e armocromia. Torino e Piemonte, disponibile per trasferte.">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#F4F1EC">
 <link rel="canonical" href="https://dominio-da-completare.example/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="it_IT">
 <meta property="og:title" content="Federica Siviero | Makeup artist sposa a Torino">
-<meta property="og:description" content="Federica Siviero, makeup artist certificata a Torino: trucco sposa dal 2015, cerimonie, shooting ed editoriali. Torino e Piemonte, disponibile per trasferte.">
+<meta property="og:description" content="Federica Siviero, makeup artist certificata a Torino: trucco sposa dal 2015, corsi di self makeup e armocromia. Torino e Piemonte, disponibile per trasferte.">
 <meta property="og:image" content="https://dominio-da-completare.example/assets/img/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -24,7 +24,8 @@
 <link rel="preload" href="/assets/fonts/archivo-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/instrument-serif-latin-400-italic.woff2" as="font" type="font/woff2" crossorigin>
 <script src="/assets/js/boot.js?v=e8bb1ff9"></script>
-<link rel="stylesheet" href="/assets/css/site.css?v=5ae5a242">
+<link rel="stylesheet" href="/assets/css/site.css?v=296ffd06">
+<link rel="stylesheet" href="/assets/css/home.css?v=8d09bd64">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -81,38 +82,290 @@
 <p class="toast" role="status" aria-live="polite" data-toast></p>
 <div class="cur" aria-hidden="true"><div class="cur-dot"><span>Vedi</span></div></div>
 <div class="grain" aria-hidden="true"></div>
+<div class="vw" role="dialog" aria-modal="true" aria-label="Foto a schermo intero" data-vw>
+  <div class="vw-stage"><img class="vw-img" alt="" data-vw-img></div>
+  <div class="vw-bar"><span class="vw-cap" data-vw-cap></span><span data-vw-n></span></div>
+  <button class="vw-btn vw-x" type="button" aria-label="Chiudi" data-vw-x><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <button class="vw-btn vw-prev" type="button" aria-label="Foto precedente" data-vw-prev><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+  <button class="vw-btn vw-next" type="button" aria-label="Foto successiva" data-vw-next><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+</div>
 
 <main id="contenuto">
-<!-- FASE 1: la Home vera (hero copertina, MAKEUP, marquee, Chi sono, galleria, Prenotiamo?) arriva nella fase 2.
-     Questa è la pagina di prova delle parti comuni: tipografia, palette, cursore, scorrimento, bottoni. -->
-<section class="wip" data-wip>
-  <p class="eyebrow">Home · fase 1 di 4</p>
-  <h1 class="wip-title" data-split>Federica <em>Siviero</em></h1>
-  <p class="wip-note">Struttura comune pronta: preloader, scorrimento morbido, header, transizioni tra pagine, cursore, bottoni magnetici e WhatsApp. I contenuti della Home arrivano nella fase 2.</p>
-  <p class="wip-row">
-    <a class="btn magnetic" href="#prenota" data-wa data-wa-msg="Ciao Federica, vorrei prenotare.">Prenotiamo?</a>
-    <a class="btn btn--line magnetic" href="/servizi">Vai ai servizi</a>
-  </p>
-</section>
-
-<section class="wip-sheet" aria-label="Prova dei caratteri e dei colori">
-  <div class="wip-type">
-    <p class="wip-d">Bodoni Moda</p>
-    <p class="wip-i">Instrument Serif corsivo</p>
-    <p class="wip-g">ARCHIVO</p>
-    <p class="wip-m">IBM Plex Mono · € XX [DA CONFERMARE]</p>
+<!-- 1. COPERTINA: il nome riempie la larghezza come la testata di una rivista, la foto sotto -->
+<section class="cover" id="top" aria-labelledby="h1">
+  <h1 class="cover-mast" id="h1" data-fit>
+    <span class="sr">Federica Siviero, makeup artist sposa a Torino</span>
+    <span class="fit-row fit-row--one" aria-hidden="true" data-split>Federica Siviero</span>
+    <span class="fit-row fit-row--two" aria-hidden="true" data-split>Federica</span>
+    <span class="fit-row fit-row--two" aria-hidden="true" data-split>Siviero</span>
+  </h1>
+  <div class="cover-body">
+    <ul class="cover-lines">
+      <li data-fade="0.5"><span>01</span>Makeup artist certificata</li>
+      <li data-fade="0.6"><span>02</span>Trucco sposa, corsi e armocromia</li>
+      <li data-fade="0.7"><span>03</span>Torino e Piemonte, dal 2015</li>
+    </ul>
+    <figure class="ph cover-ph" data-cover-ph>
+      <picture><source type="image/webp" srcset="/assets/img/palazzo-mano-alzata-480.webp 480w, /assets/img/palazzo-mano-alzata-800.webp 800w, /assets/img/palazzo-mano-alzata-1200.webp 1200w" sizes="(min-width: 900px) 38vw, 92vw"><img src="/assets/img/palazzo-mano-alzata-800.jpg" width="800" height="800" alt="Sposa con i capelli raccolti e le labbra color pesca che alza la mano verso la luce della finestra" fetchpriority="high" decoding="async"></picture>
+    </figure>
+    <div class="cover-side">
+      <p class="cover-sub" data-fade="0.6">Trucco sposa, corsi di self makeup e armocromia. Accanto alle spose <em>dal 2015.</em></p>
+      <p data-fade="0.75"><a class="btn magnetic" href="#contatti">Richiedi la tua data</a></p>
+    </div>
   </div>
-  <ul class="wip-chips" aria-label="Palette">
-    <li style="--c:#F4F1EC"><b>#F4F1EC</b> bianco caldo</li>
-    <li style="--c:#111111;color:#F4F1EC"><b>#111111</b> nero</li>
-    <li style="--c:#D10F2F;color:#F4F1EC"><b>#D10F2F</b> accento</li>
-  </ul>
 </section>
 
-<section class="wip-photos" aria-label="Foto di prova per il cursore">
-  <figure data-cursor="vedi"><picture><source type="image/webp" srcset="/assets/img/ritratto-rosa-tatuaggio-480.webp 480w, /assets/img/ritratto-rosa-tatuaggio-800.webp 800w, /assets/img/ritratto-rosa-tatuaggio-1200.webp 1200w" sizes="(min-width: 900px) 30vw, 80vw"><img src="/assets/img/ritratto-rosa-tatuaggio-800.jpg" width="800" height="1067" alt="Donna bionda con collana di perle e rossetto corallo, occhi chiusi, in luce bianca" loading="lazy" decoding="async"></picture></figure>
-  <figure data-cursor="vedi"><picture><source type="image/webp" srcset="/assets/img/sposa-bouquet-profilo-480.webp 480w, /assets/img/sposa-bouquet-profilo-800.webp 800w, /assets/img/sposa-bouquet-profilo-1200.webp 1200w" sizes="(min-width: 900px) 30vw, 80vw"><img src="/assets/img/sposa-bouquet-profilo-800.jpg" width="800" height="1067" alt="Sposa di profilo con gli occhi chiusi accanto al bouquet di rose pesca e fiori azzurri" loading="lazy" decoding="async"></picture></figure>
-  <figure data-cursor="vedi"><picture><source type="image/webp" srcset="/assets/img/palazzo-profilo-luce-480.webp 480w, /assets/img/palazzo-profilo-luce-800.webp 800w, /assets/img/palazzo-profilo-luce-1200.webp 1200w" sizes="(min-width: 900px) 30vw, 80vw"><img src="/assets/img/palazzo-profilo-luce-800.jpg" width="800" height="800" alt="Sposa di profilo con gli occhi chiusi nella luce di una finestra" loading="lazy" decoding="async"></picture></figure>
+<!-- 2. MARQUEE -->
+<div class="mq" aria-hidden="true">
+  <div class="mq-track" data-mq>
+    <div class="mq-g"><span>Spose</span><i></i><em>Corsi</em><i></i><span>Armocromia</span><i></i><em>Torino</em><i></i><span>Spose</span><i></i><em>Corsi</em><i></i><span>Armocromia</span><i></i><em>Torino</em><i></i></div>
+    <div class="mq-g"><span>Spose</span><i></i><em>Corsi</em><i></i><span>Armocromia</span><i></i><em>Torino</em><i></i><span>Spose</span><i></i><em>Corsi</em><i></i><span>Armocromia</span><i></i><em>Torino</em><i></i></div>
+  </div>
+  <div class="mq-track mq-track--sub">
+    <div class="mq-g"><span>Trucco sposa</span><b>/</b><span>Self makeup</span><b>/</b><span>Armocromia</span><b>/</b><span>Eventi e sfilate</span><b>/</b><span>Torino e Piemonte</span><b>/</b><span>Dal 2015</span><b>/</b></div>
+    <div class="mq-g"><span>Trucco sposa</span><b>/</b><span>Self makeup</span><b>/</b><span>Armocromia</span><b>/</b><span>Eventi e sfilate</span><b>/</b><span>Torino e Piemonte</span><b>/</b><span>Dal 2015</span><b>/</b></div>
+  </div>
+</div>
+
+<!-- 3. CHI SONO: il testo si accende parola per parola; il ritaglio segue il mouse e ruota scorrendo -->
+<section class="sez chi" id="chi-sono" aria-labelledby="chiTitle">
+  <span class="giant chi-giant" aria-hidden="true" data-giant="-16" data-word="Federica"></span>
+  <div class="wrap chi-grid">
+    <div class="chi-text">
+      <p class="eyebrow" data-fade>Chi sono</p>
+      <h2 class="title" id="chiTitle" data-lines>Valorizzare, <em>non trasformare.</em></h2>
+      <p class="big-p" data-words>Sono Federica, makeup artist certificata. Dal 2015 preparo le spose a Torino e in tutto il Piemonte. Il trucco deve somigliarti: sei sempre tu, nella tua versione più luminosa.</p>
+      <p class="lead" data-fade>Parto dalla pelle, la preparo su misura, e solo dopo costruisco il resto.</p>
+      <p data-fade><a class="btn btn--line magnetic" href="#contatti">Conosciamoci</a></p>
+    </div>
+    <div class="chi-media">
+      <figure class="chi-cut" data-cut>
+        <img src="/assets/img/federica-ritaglio-430.webp" srcset="/assets/img/federica-ritaglio-300.webp 300w, /assets/img/federica-ritaglio-430.webp 430w" sizes="(min-width: 900px) 25vw, 62vw" width="430" height="560" alt="Federica Siviero in bianco e nero, con il rossetto rosso" loading="lazy" decoding="async">
+      </figure>
+      <div class="ph chi-small" data-reveal data-speed="12"><picture><source type="image/webp" srcset="/assets/img/palazzo-profilo-luce-480.webp 480w, /assets/img/palazzo-profilo-luce-800.webp 800w, /assets/img/palazzo-profilo-luce-1200.webp 1200w" sizes="(min-width: 900px) 18vw, 40vw"><img src="/assets/img/palazzo-profilo-luce-800.jpg" width="800" height="800" alt="Sposa di profilo con gli occhi chiusi nella luce di una finestra, pelle luminosa e labbra nude" loading="lazy" decoding="async"></picture></div>
+      <div class="badge" aria-hidden="true">
+        <svg viewBox="0 0 120 120"><defs><path id="badgeCircle" d="M60 60 m-46 0 a46 46 0 1 1 92 0 a46 46 0 1 1 -92 0"/></defs><text><textPath href="#badgeCircle">Makeup artist certificata · Torino · dal 2015 ·</textPath></text></svg>
+        <b>2015</b>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. MAKEUP: due foto specchiate, la parola gigante le attraversa e resta ferma mentre le foto si allontanano -->
+<section class="mk" aria-label="Il trucco parte dal viso" data-mk>
+  <div class="mk-pin">
+    <div class="ph mk-ph mk-ph--top" aria-hidden="true"><picture><source type="image/webp" srcset="/assets/img/ritratto-primo-piano-480.webp 480w, /assets/img/ritratto-primo-piano-800.webp 800w, /assets/img/ritratto-primo-piano-1200.webp 1200w" sizes="(min-width: 900px) 52vw, 88vw"><img src="/assets/img/ritratto-primo-piano-800.jpg" width="800" height="1067" alt="" loading="lazy" decoding="async"></picture></div>
+    <div class="ph mk-ph mk-ph--bot"><picture><source type="image/webp" srcset="/assets/img/ritratto-primo-piano-480.webp 480w, /assets/img/ritratto-primo-piano-800.webp 800w, /assets/img/ritratto-primo-piano-1200.webp 1200w" sizes="(min-width: 900px) 52vw, 88vw"><img src="/assets/img/ritratto-primo-piano-800.jpg" width="800" height="1067" alt="Donna con capelli biondi mossi e tatuaggi sulle braccia che sorride guardando in camera, trucco occhi caldo" loading="lazy" decoding="async"></picture></div>
+    <p class="mk-word" aria-hidden="true"><span class="mk-solid">Make<b>u</b>p</span><span class="mk-ghost">Makeup</span></p>
+  </div>
+</section>
+
+<!-- 5. MANIFESTO: "SEI TU." buca un vetro smerigliato e mostra il viso nitido -->
+<section class="mani" id="manifesto" aria-label="Sei sempre tu">
+  <div class="wrap mani-grid">
+    <div class="mani-side mani-l">
+      <p class="eyebrow" data-fade>Manifesto</p>
+      <p class="mani-claim" data-lines>Valorizzare, <em>non trasformare.</em></p>
+    </div>
+    <figure class="mani-card" data-mani>
+      <svg viewBox="0 0 1000 1250" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="maniT">
+        <title id="maniT">Sei tu: la scritta attraversa un vetro smerigliato e mostra il viso nitido di una sposa</title>
+        <defs>
+          <mask id="maniMask" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="1250">
+            <rect width="1000" height="1250" fill="#fff"/>
+            <g class="mani-words" fill="#000"><text x="500" y="560" text-anchor="middle" textLength="880" lengthAdjust="spacingAndGlyphs">SEI</text><text x="500" y="1000" text-anchor="middle" textLength="700" lengthAdjust="spacingAndGlyphs">TU.</text></g>
+            <circle class="mani-lens" cx="535" cy="480" r="92" fill="#000"/>
+          </mask>
+          <filter id="maniEdge" x="-5%" y="-5%" width="110%" height="110%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#111" flood-opacity=".45"/></filter>
+        </defs>
+        <image href="/assets/img/manifesto-nitida-1000.webp" width="1000" height="1250" preserveAspectRatio="xMidYMid slice"/>
+        <image href="/assets/img/manifesto-vetro-1000.webp" width="1000" height="1250" preserveAspectRatio="xMidYMid slice" mask="url(#maniMask)"/>
+        <g class="mani-edge" filter="url(#maniEdge)" fill="none" stroke="rgba(255,240,232,.42)" stroke-width="2.2">
+          <g class="mani-words"><text x="500" y="560" text-anchor="middle" textLength="880" lengthAdjust="spacingAndGlyphs">SEI</text><text x="500" y="1000" text-anchor="middle" textLength="700" lengthAdjust="spacingAndGlyphs">TU.</text></g>
+          <circle class="mani-lens" cx="535" cy="480" r="92"/>
+        </g>
+        <text class="mani-num" x="48" y="96">2015</text>
+        <text class="mani-num" x="952" y="96" text-anchor="end">TORINO</text>
+      </svg>
+    </figure>
+    <div class="mani-side mani-r">
+      <p data-fade>Il trucco non deve coprirti. Parto dalla pelle e lavoro per sottrazione, finché nello specchio resti tu, solo più luminosa.</p>
+      <a class="link" href="#metodo" data-fade>Il mio metodo</a>
+    </div>
+  </div>
+</section>
+
+<!-- 6. METODO: a sinistra la foto resta ferma e cambia a ogni passo -->
+<section class="sez met" id="metodo" aria-labelledby="metTitle">
+  <div class="wrap met-grid">
+    <div class="met-media" aria-hidden="true">
+      <div class="ph met-ph is-on" data-step-img="0"><picture><source type="image/webp" srcset="/assets/img/palazzo-ritratto-braccia-480.webp 480w, /assets/img/palazzo-ritratto-braccia-800.webp 800w, /assets/img/palazzo-ritratto-braccia-1200.webp 1200w" sizes="(min-width: 900px) 40vw, 86vw"><img src="/assets/img/palazzo-ritratto-braccia-800.jpg" width="800" height="800" alt="" loading="lazy" decoding="async"></picture></div>
+      <div class="ph met-ph" data-step-img="1"><picture><source type="image/webp" srcset="/assets/img/palazzo-primo-piano-orecchino-480.webp 480w, /assets/img/palazzo-primo-piano-orecchino-800.webp 800w, /assets/img/palazzo-primo-piano-orecchino-1200.webp 1200w" sizes="(min-width: 900px) 40vw, 86vw"><img src="/assets/img/palazzo-primo-piano-orecchino-800.jpg" width="800" height="800" alt="" loading="lazy" decoding="async"></picture></div>
+      <div class="ph met-ph" data-step-img="2"><picture><source type="image/webp" srcset="/assets/img/palazzo-mano-alzata-480.webp 480w, /assets/img/palazzo-mano-alzata-800.webp 800w, /assets/img/palazzo-mano-alzata-1200.webp 1200w" sizes="(min-width: 900px) 40vw, 86vw"><img src="/assets/img/palazzo-mano-alzata-800.jpg" width="800" height="800" alt="" loading="lazy" decoding="async"></picture></div>
+    </div>
+    <div class="met-text">
+      <p class="eyebrow" data-fade>Il mio metodo</p>
+      <h2 class="title" id="metTitle" data-lines>Tre elementi chiave dei miei <em>makeup sposa.</em></h2>
+      <ol class="met-steps">
+        <li data-step="0">
+          <span class="met-n">01</span>
+          <h3 data-lines>Skincare <em>personalizzata</em></h3>
+          <p data-fade>Modulata in base al tipo di pelle e alle esigenze di ogni cliente. È il primo passo, il fondamento di ogni mio makeup: è ciò che gli garantisce tenuta e finish impeccabili.</p>
+        </li>
+        <li data-step="1">
+          <span class="met-n">02</span>
+          <h3 data-lines>Base viso effetto <em>pelle di pesca</em></h3>
+          <p data-fade>Una base leggerissima, fresca e radiosa. Lavoro i prodotti con cura, senza stratificarli, per garantire estremo comfort e un finish in stile hollywoodiano.</p>
+        </li>
+        <li data-step="2">
+          <span class="met-n">03</span>
+          <h3><span class="todo">[terzo elemento chiave]</span></h3>
+          <p><span class="todo">[DA COMPLETARE: il terzo punto del post «3 elementi chiave dei miei makeup sposa»]</span></p>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- 7. FIRMA SUL VISO: il nome in corsivo scorre sopra la foto e si inclina con la velocità dello scorrimento -->
+<section class="wm" aria-hidden="true">
+  <div class="ph wm-frame" data-reveal>
+    <picture><source type="image/webp" srcset="/assets/img/palazzo-primo-piano-orecchino-480.webp 480w, /assets/img/palazzo-primo-piano-orecchino-800.webp 800w, /assets/img/palazzo-primo-piano-orecchino-1200.webp 1200w" sizes="(min-width: 900px) 94vw, 100vw"><img src="/assets/img/palazzo-primo-piano-orecchino-800.jpg" width="800" height="800" alt="" loading="lazy" decoding="async"></picture>
+    <div class="wm-mq"><div class="wm-track" data-wm><span>Federica Siviero</span><span>Federica Siviero</span><span>Federica Siviero</span><span>Federica Siviero</span></div></div>
+  </div>
+</section>
+
+<!-- 8. SERVIZI in breve: il listino completo è nella pagina Servizi -->
+<section class="sez serv" id="servizi" aria-labelledby="servTitle">
+  <span class="giant serv-giant" aria-hidden="true" data-giant="-18" data-word="Sposa"></span>
+  <div class="wrap">
+    <div class="serv-head">
+      <p class="eyebrow" data-fade>Servizi</p>
+      <h2 class="title" id="servTitle" data-lines>Il trucco del grande giorno, <em>e di tutti gli altri.</em></h2>
+    </div>
+    <div class="serv-grid">
+      <article class="serv-card">
+        <div class="ph" data-reveal><span class="vid-tag">Spose reali</span><video muted loop playsinline preload="none" poster="/assets/video/spose-prima-dopo-poster.webp" aria-label="Video: alcune spose truccate da Federica, una dopo l'altra" data-autoplay><source src="/assets/video/spose-prima-dopo.webm" type="video/webm"><source src="/assets/video/spose-prima-dopo.mp4" type="video/mp4"></video></div>
+        <h3 data-lines>Trucco sposa <small>01</small></h3>
+        <p data-fade>Il trucco del tuo giorno, costruito sul tuo viso, sull'abito e sulla luce della giornata.</p>
+        <a class="link" href="/servizi" data-fade>Scopri</a>
+      </article>
+      <article class="serv-card">
+        <div class="ph" data-reveal><picture><source type="image/webp" srcset="/assets/img/ritratto-dall-alto-480.webp 480w, /assets/img/ritratto-dall-alto-800.webp 800w, /assets/img/ritratto-dall-alto-1200.webp 1200w" sizes="(min-width: 900px) 30vw, 90vw"><img src="/assets/img/ritratto-dall-alto-800.jpg" width="800" height="1067" alt="Donna sdraiata su lenzuola bianche fotografata dall'alto, con trucco occhi caldo e capelli mossi" loading="lazy" decoding="async"></picture></div>
+        <h3 data-lines>Corsi di self makeup <small>02</small></h3>
+        <p data-fade>Impari a truccarti da sola, passo per passo, con gesti semplici da rifare ogni giorno a casa.</p>
+        <a class="link" href="/servizi" data-fade>Scopri</a>
+      </article>
+      <article class="serv-card">
+        <div class="ph" data-reveal><picture><source type="image/webp" srcset="/assets/img/ritratto-turbante-480.webp 480w, /assets/img/ritratto-turbante-800.webp 800w, /assets/img/ritratto-turbante-1200.webp 1200w" sizes="(min-width: 900px) 30vw, 90vw"><img src="/assets/img/ritratto-turbante-800.jpg" width="800" height="1067" alt="Donna con turbante avorio e bracciale dorato, sdraiata, ritratta dall'alto con trucco nei toni caldi" loading="lazy" decoding="async"></picture></div>
+        <h3 data-lines>Armocromia <small>03</small></h3>
+        <p data-fade>Scopri i colori che ti illuminano il viso: per il trucco, per i capelli e per quello che indossi.</p>
+        <a class="link" href="/servizi" data-fade>Scopri</a>
+      </article>
+    </div>
+    <div class="serv-extra">
+      <p data-fade>Anche trucco per <em>eventi e sfilate.</em></p>
+      <a class="btn btn--line magnetic" href="/servizi">Servizi e listino</a>
+    </div>
+  </div>
+</section>
+
+<!-- 9. GALLERIA ORIZZONTALE: ferma sullo schermo, le foto scorrono di lato, si scoprono e si muovono dentro la cornice -->
+<section class="hg" aria-labelledby="hgTitle" data-hg>
+  <div class="hg-pin">
+    <div class="hg-head wrap">
+      <div>
+        <p class="eyebrow" data-fade>Portfolio</p>
+        <h2 class="title" id="hgTitle" data-lines>I miei <em>lavori</em></h2>
+      </div>
+      <p class="hg-note" data-fade>Spose, ritratti e servizi editoriali: ogni trucco pensato sul viso di chi lo indossa.</p>
+    </div>
+    <div class="hg-track" data-hg-track data-view-group>
+      <figure class="hg-item"><button type="button" class="hg-btn" data-view data-cursor="vedi" data-full="/assets/img/palazzo-abito-finestra-1200.webp" data-title="Sposa a palazzo"><span class="ph hg-ph"><picture><source type="image/webp" srcset="/assets/img/palazzo-abito-finestra-480.webp 480w, /assets/img/palazzo-abito-finestra-800.webp 800w, /assets/img/palazzo-abito-finestra-1200.webp 1200w" sizes="(min-width: 900px) 30vw, 74vw"><img src="/assets/img/palazzo-abito-finestra-800.jpg" width="800" height="800" alt="Sposa in abito a sirena con maniche di tulle, in un salone d'epoca illuminato dalla finestra" loading="lazy" decoding="async"></picture></span><figcaption><i>01</i> Sposa a palazzo <b>Sposa</b></figcaption></button></figure>
+      <figure class="hg-item"><button type="button" class="hg-btn" data-view data-cursor="vedi" data-full="/assets/img/sposa-luci-fiori-1200.webp" data-title="Tra le luci e i fiori"><span class="ph hg-ph"><picture><source type="image/webp" srcset="/assets/img/sposa-luci-fiori-480.webp 480w, /assets/img/sposa-luci-fiori-800.webp 800w, /assets/img/sposa-luci-fiori-1200.webp 1200w" sizes="(min-width: 900px) 30vw, 74vw"><img src="/assets/img/sposa-luci-fiori-800.jpg" width="800" height="1067" alt="Sposa in abito bianco tra composizioni di fiori colorati e tende di luci calde" loading="lazy" decoding="async"></picture></span><figcaption><i>02</i> Tra le luci e i fiori <b>Sposa</b></figcaption></button></figure>
+      <figure class="hg-item"><button type="button" class="hg-btn" data-view data-cursor="vedi" data-full="/assets/img/ritratto-velo-spalla-1200.webp" data-title="Ritratto con velo"><span class="ph hg-ph"><picture><source type="image/webp" srcset="/assets/img/ritratto-velo-spalla-480.webp 480w, /assets/img/ritratto-velo-spalla-800.webp 800w, /assets/img/ritratto-velo-spalla-1200.webp 1200w" sizes="(min-width: 900px) 30vw, 74vw"><img src="/assets/img/ritratto-velo-spalla-800.jpg" width="800" height="1067" alt="Donna con capelli biondi mossi e tatuaggi che si volta tra veli bianchi" loading="lazy" decoding="async"></picture></span><figcaption><i>03</i> Ritratto con velo <b>Beauty</b></figcaption></button></figure>
+      <figure class="hg-item"><button type="button" class="hg-btn" data-view data-cursor="vedi" data-full="/assets/img/palazzo-ritratto-braccia-1200.webp" data-title="Base pelle di pesca"><span class="ph hg-ph"><picture><source type="image/webp" srcset="/assets/img/palazzo-ritratto-braccia-480.webp 480w, /assets/img/palazzo-ritratto-braccia-800.webp 800w, /assets/img/palazzo-ritratto-braccia-1200.webp 1200w" sizes="(min-width: 900px) 30vw, 74vw"><img src="/assets/img/palazzo-ritratto-braccia-800.jpg" width="800" height="800" alt="Sposa con pelle luminosa e occhi intensi, braccia incrociate sulle spalle" loading="lazy" decoding="async"></picture></span><figcaption><i>04</i> Base pelle di pesca <b>Sposa</b></figcaption></button></figure>
+      <figure class="hg-item"><button type="button" class="hg-btn" data-view data-cursor="vedi" data-full="/assets/img/sposa-sorriso-bouquet-1200.webp" data-title="Il mattino del sì"><span class="ph hg-ph"><picture><source type="image/webp" srcset="/assets/img/sposa-sorriso-bouquet-480.webp 480w, /assets/img/sposa-sorriso-bouquet-800.webp 800w, /assets/img/sposa-sorriso-bouquet-1200.webp 1200w" sizes="(min-width: 900px) 30vw, 74vw"><img src="/assets/img/sposa-sorriso-bouquet-800.jpg" width="800" height="1067" alt="Sposa sorridente che guarda il bouquet, trucco occhi luminoso e labbra rosate" loading="lazy" decoding="async"></picture></span><figcaption><i>05</i> Il mattino del sì <b>Sposa</b></figcaption></button></figure>
+      <figure class="hg-item"><button type="button" class="hg-btn" data-view data-cursor="vedi" data-full="/assets/img/ritratto-camicia-pizzo-1200.webp" data-title="Ritratto con camicia"><span class="ph hg-ph"><picture><source type="image/webp" srcset="/assets/img/ritratto-camicia-pizzo-480.webp 480w, /assets/img/ritratto-camicia-pizzo-800.webp 800w, /assets/img/ritratto-camicia-pizzo-1200.webp 1200w" sizes="(min-width: 900px) 30vw, 74vw"><img src="/assets/img/ritratto-camicia-pizzo-800.jpg" width="800" height="1067" alt="Donna con capelli scuri e camicia bianca appoggiata a una tenda, sguardo in camera" loading="lazy" decoding="async"></picture></span><figcaption><i>06</i> Ritratto con camicia <b>Beauty</b></figcaption></button></figure>
+      <a class="hg-more" href="/portfolio"><span>Tutto il</span> <em>portfolio</em></a>
+    </div>
+  </div>
+</section>
+
+<!-- 10. RECENSIONI -->
+<section class="sez rec" id="recensioni" aria-labelledby="recTitle">
+  <div class="wrap rec-grid">
+    <div class="rec-score">
+      <p class="eyebrow" id="recTitle">Recensioni</p>
+      <strong>5,0</strong>
+      <span class="stars" role="img" aria-label="5 stelle su 5">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.8l2.8 6 6.5.6-4.9 4.3 1.5 6.4L12 16.8 6.1 20.1l1.5-6.4L2.7 9.4l6.5-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.8l2.8 6 6.5.6-4.9 4.3 1.5 6.4L12 16.8 6.1 20.1l1.5-6.4L2.7 9.4l6.5-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.8l2.8 6 6.5.6-4.9 4.3 1.5 6.4L12 16.8 6.1 20.1l1.5-6.4L2.7 9.4l6.5-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.8l2.8 6 6.5.6-4.9 4.3 1.5 6.4L12 16.8 6.1 20.1l1.5-6.4L2.7 9.4l6.5-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.8l2.8 6 6.5.6-4.9 4.3 1.5 6.4L12 16.8 6.1 20.1l1.5-6.4L2.7 9.4l6.5-.6z"/></svg>
+      </span>
+      <p>su Google · 17 recensioni</p>
+      <a class="link" href="https://www.google.com/search?q=Federica+Siviero+makeup+artist+Torino" target="_blank" rel="noopener">Leggi le recensioni</a>
+    </div>
+    <div class="slider" data-slider aria-roledescription="carosello" aria-label="Recensioni delle clienti">
+      <div class="slides">
+        <figure class="slide is-on" aria-roledescription="recensione" aria-label="1 di 3">
+          <blockquote><span class="todo">[recensione reale da Google]</span></blockquote>
+          <figcaption><cite><span class="todo">[Nome]</span> · <span class="todo">[sposa, corso o armocromia]</span></cite></figcaption>
+        </figure>
+        <figure class="slide" aria-roledescription="recensione" aria-label="2 di 3">
+          <blockquote><span class="todo">[recensione reale da Google]</span></blockquote>
+          <figcaption><cite><span class="todo">[Nome]</span> · <span class="todo">[sposa, corso o armocromia]</span></cite></figcaption>
+        </figure>
+        <figure class="slide" aria-roledescription="recensione" aria-label="3 di 3">
+          <blockquote><span class="todo">[recensione reale da Google]</span></blockquote>
+          <figcaption><cite><span class="todo">[Nome]</span> · <span class="todo">[sposa, corso o armocromia]</span></cite></figcaption>
+        </figure>
+      </div>
+      <div class="slider-nav">
+        <button type="button" data-prev aria-label="Recensione precedente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+        <button type="button" data-next aria-label="Recensione successiva"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <span class="slider-bar" aria-hidden="true"><i></i></span>
+        <span class="slider-n" aria-live="polite"><span data-slide-n>1</span> / 3</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 11. PRENOTIAMO? e modulo che apre WhatsApp -->
+<section class="book" id="contatti" aria-labelledby="bookTitle">
+  <p class="eyebrow" data-fade>Contatti</p>
+  <h2 class="book-word" id="bookTitle" data-lines>Prenotiamo<em>?</em></h2>
+  <p data-fade>Scrivimi due righe: ti rispondo io e confermiamo insieme disponibilità e dettagli. Non c'è nessuna prenotazione automatica.</p>
+  <a class="book-cta magnetic" href="#prenota" data-wa data-wa-msg="Ciao Federica, vorrei prenotare.">Scrivimi</a>
+</section>
+<section class="cont" aria-label="Richiesta di informazioni">
+  <div class="wrap cont-grid">
+    <div class="cont-text">
+      <h2 class="title" data-lines>Raccontami <em>la tua data.</em></h2>
+      <div class="cont-direct" data-fade>
+        <span>WhatsApp: <span class="todo">[numero da completare]</span></span>
+        <span>Instagram: <a href="https://www.instagram.com/federicasiviero_beauty/" target="_blank" rel="noopener">@federicasiviero_beauty</a></span>
+        <span>Torino e Piemonte, disponibile per trasferte</span>
+      </div>
+    </div>
+    <form class="form" id="form" novalidate data-fade>
+      <div class="field"><label for="f-nome">Nome</label><input id="f-nome" name="nome" type="text" autocomplete="given-name" required></div>
+      <div class="field-row">
+        <div class="field"><label for="f-data">Data dell'evento</label><input id="f-data" name="data" type="date"></div>
+        <div class="field"><label for="f-serv">Servizio</label>
+          <select id="f-serv" name="servizio">
+            <option>Trucco sposa</option>
+            <option>Corso di self makeup</option>
+            <option>Armocromia</option>
+            <option>Evento o sfilata</option>
+            <option>Altro</option>
+          </select>
+        </div>
+      </div>
+      <div class="field"><label for="f-msg">Messaggio</label><textarea id="f-msg" name="messaggio" rows="4" placeholder="Luogo, orario, quante persone da truccare…"></textarea></div>
+      <p class="form-note">Si apre WhatsApp con il messaggio già scritto: parte solo quando lo invii tu. <a href="/privacy">Informativa privacy</a></p>
+      <p class="form-msg" data-form-msg role="status"></p>
+      <button class="btn magnetic" type="submit">Invia la richiesta</button>
+    </form>
+  </div>
 </section>
 </main>
 <footer class="ft">
@@ -140,6 +393,7 @@
 <script defer src="/assets/vendor/SplitText.min.js?v=5e519ea2"></script>
 <script defer src="/assets/vendor/lenis.min.js?v=978450a5"></script>
 <script defer src="/assets/js/config.js?v=72627ee5"></script>
-<script defer src="/assets/js/site.js?v=78ae3572"></script>
+<script defer src="/assets/js/site.js?v=5d092a48"></script>
+<script defer src="/assets/js/home.js?v=c66ca2a1"></script>
 </body>
 </html>

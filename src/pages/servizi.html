@@ -1,21 +1,135 @@
 ---
 title: Servizi | Federica Siviero makeup artist a Torino
-description: Trucco sposa, cerimonie ed eventi, shooting ed editoriali a Torino e in Piemonte. Prezzi e durate su richiesta.
+description: Trucco sposa, cerimonie ed eventi, shooting ed editoriali, corsi di self makeup e armocromia a Torino e in Piemonte.
 path: /servizi
 out: servizi.html
 nav: servizi
+css: servizi
+js: servizi
 ---
-<!-- FASE 1: gli scontrini appesi e il listino arrivano nella fase 3. -->
-<section class="wip" data-wip>
-  <p class="eyebrow">Servizi · fase 1 di 4</p>
-  <h1 class="wip-title" data-split>I <em>servizi</em></h1>
-  <p class="wip-note">Pagina in costruzione: qui arriveranno i tre scontrini (Sposa, Cerimonia o Evento, Shooting o Editoriale) e il listino. Prezzi e durate saranno segnaposto <span class="todo">€ XX [DA CONFERMARE]</span>.</p>
-  <p class="wip-row">
-    <a class="btn btn--line magnetic" href="/">Torna alla home</a>
-    <a class="btn magnetic" href="/portfolio">Vai al portfolio</a>
-  </p>
+<!-- 1. INTRO -->
+<section class="s-intro" aria-labelledby="h1">
+  <span class="giant s-giant" aria-hidden="true" data-giant="-12" data-word="Servizi"></span>
+  <div class="wrap s-intro-in">
+    <p class="eyebrow" data-fade="0.3">Servizi</p>
+    <h1 class="s-title" id="h1" data-split>Il trucco del grande giorno, <em>e di tutti gli altri.</em></h1>
+    <p class="lead" data-fade="0.6">Scegli il tuo momento: sposa, cerimonia o evento, shooting o editoriale. Disponibilità e dettagli li confermiamo insieme su WhatsApp, senza prenotazioni automatiche.</p>
+  </div>
 </section>
-<section class="wip-photos wip-photos--two" aria-label="Foto di prova">
-  <figure data-cursor="vedi">{{pic:sposa-luci-fiori|(min-width: 900px) 30vw, 80vw|Sposa in abito bianco tra composizioni di fiori colorati e tende di luci calde}}</figure>
-  <figure data-cursor="vedi">{{pic:ritratto-turbante|(min-width: 900px) 30vw, 80vw|Donna con turbante avorio e bracciale dorato, sdraiata, ritratta dall'alto}}</figure>
+
+<!-- 2. TRE SCONTRINI APPESI: cadono dall'alto e oscillano attorno allo spillo; col mouse si sollevano.
+     Prezzi e durate sono segnaposto: si cambiano qui sotto. -->
+<section class="rc-wall" aria-label="I tre servizi principali" data-rc-wall>
+  <article class="rc" data-rc style="--tilt:-2.2deg">
+    <i class="rc-pin" aria-hidden="true"></i>
+    <div class="rc-paper">
+      <p class="rc-brand">Federica Siviero</p>
+      <p class="rc-rule" aria-hidden="true">==============================</p>
+      <h2 class="rc-title">Sposa</h2>
+      <p class="rc-rule" aria-hidden="true">==============================</p>
+      <div class="rc-ph">{{pic:sposa-sorriso-bouquet|(min-width: 900px) 20vw, 70vw|Sposa sorridente che guarda il bouquet, trucco occhi luminoso e labbra rosate}}</div>
+      <p class="rc-rule" aria-hidden="true">==============================</p>
+      <ul class="rc-list">
+        <li><span>Trucco sposa</span><b>€ XX</b></li>
+        <li><span>Durata</span><b>XX min</b></li>
+      </ul>
+      <p class="rc-todo">[DA CONFERMARE]</p>
+      <p class="rc-rule" aria-hidden="true">==============================</p>
+      <a class="rc-cta" href="#prenota" data-wa data-wa-msg="Ciao Federica, vorrei informazioni sul trucco sposa.">Prenota su WhatsApp</a>
+      <p class="rc-rule" aria-hidden="true">==============================</p>
+    </div>
+  </article>
+  <article class="rc" data-rc style="--tilt:1.6deg">
+    <i class="rc-pin" aria-hidden="true"></i>
+    <div class="rc-paper">
+      <p class="rc-brand">Federica Siviero</p>
+      <p class="rc-rule" aria-hidden="true">==============================</p>
+      <h2 class="rc-title">Cerimonia <span>o evento</span></h2>
+      <p class="rc-rule" aria-hidden="true">==============================</p>
+      <div class="rc-ph">{{pic:ritratto-camicia-pizzo|(min-width: 900px) 20vw, 70vw|Donna con capelli scuri e camicia bianca appoggiata a una tenda, sguardo in camera}}</div>
+      <p class="rc-rule" aria-hidden="true">==============================</p>
+      <ul class="rc-list">
+        <li><span>Trucco cerimonia o evento</span><b>€ XX</b></li>
+        <li><span>Durata</span><b>XX min</b></li>
+      </ul>
+      <p class="rc-todo">[DA CONFERMARE]</p>
+      <p class="rc-rule" aria-hidden="true">==============================</p>
+      <a class="rc-cta" href="#prenota" data-wa data-wa-msg="Ciao Federica, vorrei informazioni sul trucco per una cerimonia o un evento.">Prenota su WhatsApp</a>
+      <p class="rc-rule" aria-hidden="true">==============================</p>
+    </div>
+  </article>
+  <article class="rc" data-rc style="--tilt:-1.2deg">
+    <i class="rc-pin" aria-hidden="true"></i>
+    <div class="rc-paper">
+      <p class="rc-brand">Federica Siviero</p>
+      <p class="rc-rule" aria-hidden="true">==============================</p>
+      <h2 class="rc-title">Shooting <span>o editoriale</span></h2>
+      <p class="rc-rule" aria-hidden="true">==============================</p>
+      <div class="rc-ph">{{pic:palazzo-primo-piano-orecchino|(min-width: 900px) 20vw, 70vw|Primo piano di una sposa con orecchino a cerchio e labbra lucide color pesca}}</div>
+      <p class="rc-rule" aria-hidden="true">==============================</p>
+      <ul class="rc-list">
+        <li><span>Trucco shooting o editoriale</span><b>€ XX</b></li>
+        <li><span>Durata</span><b>XX min</b></li>
+      </ul>
+      <p class="rc-todo">[DA CONFERMARE]</p>
+      <p class="rc-rule" aria-hidden="true">==============================</p>
+      <a class="rc-cta" href="#prenota" data-wa data-wa-msg="Ciao Federica, vorrei informazioni sul trucco per uno shooting o un editoriale.">Prenota su WhatsApp</a>
+      <p class="rc-rule" aria-hidden="true">==============================</p>
+    </div>
+  </article>
+</section>
+
+<!-- 3. LISTINO: voce a sinistra, prezzo a destra; i prezzi contano da zero quando entrano (data-price) -->
+<section class="sez ls" aria-labelledby="lsTitle">
+  <div class="wrap ls-grid">
+    <div class="ls-text">
+      <p class="eyebrow" data-fade>Listino</p>
+      <h2 class="title" id="lsTitle" data-lines>Tutto, <em>in una pagina.</em></h2>
+      <p class="lead" data-fade>Per un preventivo sulla tua data, con orari ed eventuale trasferta, scrivimi su WhatsApp.</p>
+      <p data-fade><a class="btn magnetic" href="#prenota" data-wa data-wa-msg="Ciao Federica, vorrei un preventivo.">Chiedi un preventivo</a></p>
+    </div>
+    <div class="ls-card" data-ls>
+      <p class="ls-head">Makeup <em>menu</em></p>
+      <ul class="ls-list">
+        <li><span>Trucco sposa</span><i aria-hidden="true"></i><b>€ <span data-price="XX">XX</span></b></li>
+        <li><span>Trucco cerimonia, evento o sfilata</span><i aria-hidden="true"></i><b>€ <span data-price="XX">XX</span></b></li>
+        <li><span>Trucco shooting o editoriale</span><i aria-hidden="true"></i><b>€ <span data-price="XX">XX</span></b></li>
+        <li><span>Corso di self makeup</span><i aria-hidden="true"></i><b>€ <span data-price="XX">XX</span></b></li>
+        <li><span>Consulenza di armocromia</span><i aria-hidden="true"></i><b>€ <span data-price="XX">XX</span></b></li>
+        <li><span>Trasferta fuori Torino</span><i aria-hidden="true"></i><b>€ <span data-price="XX">XX</span></b></li>
+      </ul>
+      <p class="ls-foot"><span class="todo">€ XX [DA CONFERMARE]</span> per tutte le voci</p>
+    </div>
+  </div>
+</section>
+
+<!-- 4. CORSI E ARMOCROMIA (dal sito di prima) -->
+<section class="sez corsi" id="corsi" aria-labelledby="corsiTitle">
+  <span class="giant g1" aria-hidden="true" data-giant="16" data-word="Corsi"></span>
+  <span class="giant g2" aria-hidden="true" data-giant="-22" data-word="Colore"></span>
+  <div class="wrap corsi-grid">
+    <div class="corsi-text">
+      <p class="eyebrow" data-fade>Corsi e armocromia</p>
+      <h2 class="title" id="corsiTitle" data-lines>Impara a <em>truccarti da sola.</em></h2>
+      <p class="lead" data-fade>Corsi di self makeup e consulenze di armocromia, per conoscere il tuo viso e i colori che ti stanno bene.</p>
+      <ul class="corsi-list">
+        <li data-fade>Preparare la pelle e scegliere una base leggera, adatta a te.</li>
+        <li data-fade>Valorizzare occhi e labbra con pochi gesti, da rifare ogni mattina.</li>
+        <li data-fade>Capire con l'armocromia quali colori ti illuminano il viso.</li>
+      </ul>
+      <p data-fade><a class="btn magnetic" href="#prenota" data-wa data-wa-msg="Ciao Federica, vorrei informazioni sui corsi di self makeup.">Richiedi informazioni</a></p>
+    </div>
+    <div class="corsi-media">
+      <div class="ph corsi-a" data-reveal data-speed="-8"><span class="vid-tag">Armocromia</span><video muted loop playsinline preload="none" poster="/assets/video/armocromia-poster.webp" aria-label="Video: consulenza di armocromia con i teli colorati e il trucco finale" data-autoplay><source src="/assets/video/armocromia.webm" type="video/webm"><source src="/assets/video/armocromia.mp4" type="video/mp4"></video></div>
+      <div class="ph corsi-b" data-reveal data-speed="12">{{pic:ritratto-velo-spalla|(min-width: 900px) 20vw, 42vw|Donna con capelli biondi mossi che si volta tra veli bianchi, trucco occhi bronzo}}</div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. PRENOTIAMO? -->
+<section class="book" aria-labelledby="bookTitle">
+  <p class="eyebrow" data-fade>Contatti</p>
+  <h2 class="book-word" id="bookTitle" data-lines>Prenotiamo<em>?</em></h2>
+  <p data-fade>Scrivimi la data e il luogo: ti rispondo io e confermiamo insieme disponibilità e dettagli.</p>
+  <a class="book-cta magnetic" href="#prenota" data-wa data-wa-msg="Ciao Federica, vorrei prenotare.">Scrivimi</a>
 </section>
