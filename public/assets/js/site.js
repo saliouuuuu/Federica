@@ -218,8 +218,11 @@
       b.addEventListener('pointerleave', function () { xTo(0); yTo(0); });
     });
     var cur = $('.cur'), cx = gs.quickTo(cur, 'x', { duration: 0.4, ease: 'power3' }), cy = gs.quickTo(cur, 'y', { duration: 0.4, ease: 'power3' }), first = true, px = -1, py = -1, ctick = false;
+    var curTxt = $('span', cur);
+    /* sopra [data-cursor="vedi"] o [data-cursor="sfoglia"] il cerchio si allarga e mostra la parola */
     var curState = function (t) {
-      var v = t && t.closest && t.closest('[data-cursor="vedi"]');
+      var v = t && t.closest && t.closest('[data-cursor]');
+      if (v && curTxt.textContent !== v.getAttribute('data-cursor')) curTxt.textContent = v.getAttribute('data-cursor');
       cur.classList.toggle('is-view', !!v);
       cur.classList.toggle('is-link', !v && !!(t && t.closest && t.closest('a, button, label, summary')));
     };
@@ -309,8 +312,7 @@
      data-words   parole che si accendono dal 10% al 100% mentre scorri (testi lunghi)
      data-fade    sale e compare quando entra nello schermo
      data-reveal  foto che si scopre dal basso, con la foto dentro che rientra
-     data-speed   parallasse verticale (numero = intensità, negativo = verso l'alto)
-     data-giant   parola gigante tono su tono che scorre più lenta */
+     data-speed   parallasse verticale (numero = intensità, negativo = verso l'alto) */
   /* SplitText mette aria-label sull'elemento: va bene sui titoli, non su paragrafi e span (lì le parole restano leggibili così) */
   function ariaFor(el) { return /^H[1-6]$/.test(el.tagName) ? 'auto' : 'none'; }
   FS.start(function () {
@@ -352,10 +354,6 @@
     $$('[data-speed]').forEach(function (el) {
       var v = parseFloat(el.getAttribute('data-speed'));
       gs.fromTo(el, { yPercent: -v * k }, { yPercent: v * k, ease: 'none', scrollTrigger: { trigger: el, start: 'top bottom', end: 'bottom top', scrub: true } });
-    });
-    $$('[data-giant]').forEach(function (g) {
-      var v = parseFloat(g.getAttribute('data-giant'));
-      gs.fromTo(g, { xPercent: -v * 0.4 * k }, { xPercent: v * 0.4 * k, ease: 'none', scrollTrigger: { trigger: g.parentElement, start: 'top bottom', end: 'bottom top', scrub: true } });
     });
     window.ScrollTrigger.refresh();
   });

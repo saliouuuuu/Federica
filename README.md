@@ -5,13 +5,13 @@ Tre pagine, Home, Servizi e Portfolio, più l'informativa privacy. Animazioni co
 tutte ospitate sul sito: nessuna libreria da CDN, nessun cookie, nessuno strumento di analisi.
 
 Direzione: rivista di moda, minimale, lusso. Bianco caldo `#F4F1EC`, nero `#111`, un solo accento rosso rossetto `#D10F2F` usato con parsimonia.
-Font: Bodoni Moda (titoli), Instrument Serif corsivo (accenti), Archivo 800 (parole giganti) e 400 (testo), IBM Plex Mono (scontrini).
+Font: Bodoni Moda (titoli), Instrument Serif corsivo (accenti), Archivo 800 (MAKEUP, listino) e 400 (testo), IBM Plex Mono (scontrini).
 
 ## Le tre pagine
 
-- **Home**: copertina con il nome a tutta larghezza; marquee; Chi sono, con il testo che si accende parola per parola, il ritaglio in bianco e nero di Federica (rossetto rosso) che segue il mouse e il badge 2015; MAKEUP con due foto specchiate; manifesto "SEI TU."; metodo in tre passi; il nome in corsivo che scorre sopra un viso; servizi in breve con il video delle spose; galleria orizzontale; recensioni; "Prenotiamo?" e il modulo che apre WhatsApp.
-- **Servizi**: tre scontrini appesi (Sposa, Cerimonia o evento, Shooting o editoriale) che cadono e oscillano attorno allo spillo; listino a menu; corsi e armocromia con il video.
-- **Portfolio**: rivista aperta che si sfoglia scorrendo; griglia asimmetrica con filtri Tutti, Sposa, Editoriale e Beauty; ogni foto si apre a schermo intero.
+- **Home**: copertina con il nome a tutta larghezza; marquee; Chi sono, con il testo che si accende parola per parola e il ritaglio in bianco e nero di Federica (rossetto rosso) che segue il mouse; MAKEUP con due foto specchiate; manifesto "SEI TU."; metodo in tre passi; servizi in tre righe; galleria orizzontale; punteggio delle recensioni Google; "Prenotiamo?" e il modulo che apre WhatsApp.
+- **Servizi**: tre scontrini appesi (Sposa, Cerimonia o evento, Shooting o editoriale) che cadono e oscillano attorno allo spillo finché si fermano; listino a menu; corsi e armocromia con il video.
+- **Portfolio**: rivista aperta che si sfoglia scorrendo, trascinando le foto di lato (dito o mouse), con le frecce sotto il libro o con i tasti ← →; griglia asimmetrica con filtri Tutti, Sposa, Editoriale e Beauty; ogni foto si apre a schermo intero.
 
 Le foto hanno gli angoli arrotondati come nel sito di prima. Testi e foto vengono dal sito di prima; il ritaglio (`assets/img/federica-ritaglio-*.webp`) è ricavato da `originali/federica-al-lavoro.jpg`.
 
@@ -31,13 +31,13 @@ Le foto hanno gli angoli arrotondati come nel sito di prima. Testi e foto vengon
 
 - **Preloader**: contatore 0→100, il nome sale lettera per lettera, poi il sipario si apre. Una volta per visita.
 - **Tra le pagine**: dove il browser lo sa fare (View Transitions) la pagina nuova sale a tendina sopra la vecchia. Altrove una tendina nera fa lo stesso. Con "riduci movimento" nessuna delle due.
-- **Telefono**: niente cursore personalizzato, niente bottoni magnetici, scorrimento nativo.
+- **Telefono**: niente cursore personalizzato, niente bottoni magnetici, niente grana, scorrimento nativo; la rivista gira una pagina alla volta.
 - **Riduci movimento**: niente preloader, niente scorrimento morbido, niente spostamenti. Il sito resta completo.
 
 ## Da completare (cercare `DA COMPLETARE`, `todo` o `XX`)
 
 - Prezzi e durate in `src/pages/servizi.html`: scontrini (`€ XX`, `XX min`) e listino (`data-price="XX"`). Con un numero, per esempio `data-price="120"`, il prezzo conta da zero quando entra nello schermo.
-- Il terzo dei "tre elementi chiave" del metodo e le tre recensioni reali da Google (Home).
+- Il terzo dei "tre elementi chiave" del metodo (Home).
 
 - `WA_NUMBER` in `public/assets/js/config.js`: numero WhatsApp con prefisso, solo cifre (es. 39...). Finché è vuoto i pulsanti WhatsApp mostrano un avviso.
 - P.IVA nel footer (`src/partials/footer.html`).

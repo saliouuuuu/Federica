@@ -1,4 +1,4 @@
-/* Federica Siviero: Portfolio. Rivista aperta che si sfoglia scorrendo, griglia asimmetrica con filtri. */
+/* Federica Siviero: Portfolio. Rivista aperta che si sfoglia scorrendo o trascinando, griglia asimmetrica con filtri. */
 
 /* ── 1. RIVISTA APERTA ── */
 .mag { position: relative; }
@@ -6,7 +6,10 @@
 .mag-head { display: grid; justify-items: center; gap: .7rem; text-align: center; }
 .mag-title { font-family: var(--display); font-weight: 400; font-size: clamp(2.8rem, 1.2rem + 5vw, 6.4rem); line-height: .92; letter-spacing: -.03em; }
 .mag-title em { color: var(--red); }
-.mag-book { position: relative; width: min(94vw, 92vh, 1080px); aspect-ratio: 3 / 2; perspective: 2400px; }
+.mag-book { position: relative; width: min(94vw, 88vh, 1080px); aspect-ratio: 3 / 2; perspective: 2400px; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+.mag-book img { -webkit-user-drag: none; pointer-events: none; }
+html:not(.cur-on) .mag-book { cursor: grab; }
+html:not(.cur-on) .mag-book.is-drag { cursor: grabbing; }
 .mag-book::before { content: ""; position: absolute; inset: 6% 1% -4%; z-index: -1; border-radius: 24px; background: rgba(17, 17, 17, .22); filter: blur(26px); }
 .mag-page, .mag-leaf { position: absolute; top: 0; bottom: 0; width: 50%; }
 .mag-page--l { left: 0; }
@@ -28,7 +31,13 @@
 .mag-page--r .mag-folio, .mag-face--front .mag-folio { text-align: right; }
 .mag-shade { position: absolute; inset: 0; border-radius: inherit; background: #111; opacity: 0; pointer-events: none; }
 .mag-spine { position: absolute; z-index: 40; left: 50%; top: 0; bottom: 0; width: 2px; margin-left: -1px; background: linear-gradient(rgba(17, 17, 17, .06), rgba(17, 17, 17, .2), rgba(17, 17, 17, .06)); pointer-events: none; }
-.mag-hint { font-family: var(--mono); font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-2); }
+.mag-nav { display: flex; align-items: center; gap: 1.2rem; }
+.mag-hint { font-family: var(--mono); font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.mag-btn { display: grid; place-items: center; width: 2.8rem; height: 2.8rem; border-radius: 50%; border: 1px solid var(--ink); background: transparent; cursor: pointer; transition: background .3s, color .3s, opacity .3s; }
+.mag-btn:hover:not(:disabled) { background: var(--ink); color: var(--paper); }
+.mag-btn:disabled { opacity: .25; cursor: default; }
+.mag-btn svg { width: 1rem; height: 1rem; }
+@media (max-width: 559px) { .mag-how { display: none; } }
 
 /* ── 2. GRIGLIA CON FILTRI ── */
 .pg-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 1.6rem 2rem; margin-bottom: clamp(2rem, 4vw, 3.4rem); }
@@ -44,7 +53,7 @@
 .pg-btn { all: unset; display: block; width: 100%; cursor: pointer; border-radius: var(--r); }
 .pg-btn:focus-visible { outline: 2px solid var(--red); outline-offset: 4px; }
 .pg-ph { display: block; aspect-ratio: var(--ar, 3 / 4); }
-.pg-ph img { scale: 1.14; transition: transform 1.4s var(--ease-out); }
+.pg-ph img { transition: transform 1.4s var(--ease-out); }
 .pg-btn:hover .pg-ph img { transform: scale(1.05); }
 .pg-cap { display: flex; align-items: baseline; gap: .7rem; margin-top: .8rem; font-family: var(--italic); font-style: italic; font-size: 1.15rem; line-height: 1.2; }
 .pg-cap i { font-style: normal; font-family: var(--mono); font-size: .68rem; color: var(--ink-2); }

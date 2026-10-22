@@ -1,5 +1,5 @@
 /* Federica Siviero: Home. La base del sito di prima (sezioni, foto ad angoli arrotondati, animazioni)
-   con gli elementi da rivista: copertina, MAKEUP specchiato, firma sul viso, ritaglio, galleria orizzontale. */
+   con gli elementi da rivista: copertina, MAKEUP specchiato, ritaglio, galleria orizzontale. */
 
 /* ── 1. COPERTINA: testata a tutta larghezza, righe di copertina, foto ── */
 .cover { padding: calc(var(--hdr-h) + clamp(.8rem, 2vw, 1.6rem)) var(--gut) clamp(3rem, 6vw, 5.5rem); }
@@ -11,19 +11,16 @@
 .cover-body { display: grid; gap: 1.6rem; margin-top: 1rem; }
 .cover-ph { position: relative; z-index: 1; aspect-ratio: 4 / 5; }
 .cover-ph img { object-position: 50% 30%; }
-.cover-lines { display: grid; gap: .55rem; font-family: var(--mono); font-size: .74rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; }
-.cover-lines li { display: flex; gap: .9rem; padding-bottom: .55rem; border-bottom: 1px solid var(--line); }
-.cover-lines span { color: var(--ink-2); font-weight: 400; }
-.cover-side { display: grid; gap: 1.3rem; justify-items: start; }
 .cover-sub { font-size: 1.05rem; line-height: 1.55; max-width: 21rem; color: var(--ink-2); }
 .cover-sub em { color: var(--ink); font-size: 1.2em; }
 @media (min-width: 900px) {
   .cover-body { grid-template-columns: 1fr minmax(0, 38vw) 1fr; align-items: start; gap: clamp(1.5rem, 3vw, 3.4rem); margin-top: -2.6vw; }
   .cover-ph { aspect-ratio: 1; }
-  .cover-lines { padding-top: 4.6vw; align-self: start; }
-  .cover-side { padding-top: 4.6vw; justify-items: end; text-align: right; }
+  .cover-sub { grid-column: 1; grid-row: 1; padding-top: 4.6vw; }
+  .cover-side { grid-column: 3; grid-row: 1; padding-top: 4.6vw; justify-self: end; }
 }
-@media (max-width: 899px) { .cover-ph { order: -1; } }
+.cover-ph { grid-column: 2; grid-row: 1; }
+@media (max-width: 899px) { .cover-ph { grid-column: auto; grid-row: auto; } }
 
 /* ── 2. MARQUEE ── */
 .mq { overflow: hidden; padding-block: clamp(1.3rem, 3vw, 2.3rem); border-block: 1px solid var(--line); }
@@ -31,27 +28,16 @@
 .mq-g { display: flex; align-items: center; gap: clamp(1.3rem, 3vw, 3rem); padding-right: clamp(1.3rem, 3vw, 3rem); font-family: var(--display); font-size: clamp(2.2rem, 1.4rem + 3.4vw, 4.8rem); line-height: 1; white-space: nowrap; }
 .mq-g em { font-size: 1.08em; }
 .mq-g i { width: .4rem; height: .4rem; border-radius: 50%; background: var(--ink); flex: none; }
-.mq-track--sub { margin-top: clamp(.9rem, 2vw, 1.4rem); animation-duration: 32s; animation-direction: reverse; }
-.mq-track--sub .mq-g { gap: 1.4rem; padding-right: 1.4rem; font-family: var(--mono); font-size: clamp(.74rem, .7rem + .25vw, .92rem); letter-spacing: .2em; text-transform: uppercase; }
-.mq-track--sub .mq-g b { font-weight: 400; color: var(--red); }
 @keyframes mq { to { transform: translateX(-50%); } }
 
 /* ── 3. CHI SONO ── */
 .chi { overflow: clip; }
-.chi-giant { top: clamp(2rem, 5vw, 4rem); left: -2vw; font-size: clamp(6.5rem, 23vw, 23rem); }
 .chi-grid { position: relative; z-index: 1; display: grid; gap: 3.5rem; }
 @media (min-width: 900px) { .chi-grid { grid-template-columns: 1.1fr .9fr; align-items: center; gap: clamp(3rem, 6vw, 7rem); } }
 .chi-text { display: grid; gap: 1.6rem; justify-items: start; }
-.chi-media { position: relative; min-height: 27rem; padding: 1.5rem 0 4.5rem; }
-.chi-cut { position: relative; z-index: 1; width: min(76%, 22rem); margin: 0 4% 0 auto; filter: drop-shadow(0 28px 34px rgba(17, 17, 17, .28)); will-change: transform; }
+.chi-media { position: relative; padding-block: 1rem; }
+.chi-cut { position: relative; z-index: 1; width: min(76%, 22rem); margin-inline: auto; filter: drop-shadow(0 28px 34px rgba(17, 17, 17, .28)); will-change: transform; }
 .chi-cut img { width: 100%; height: auto; }
-.chi-small { position: absolute; z-index: 2; left: 0; bottom: 0; width: 40%; aspect-ratio: 1; border: 6px solid var(--paper); border-radius: calc(var(--r) + 6px); }
-.badge { position: absolute; z-index: 3; left: 4%; top: 0; width: clamp(7rem, 12vw, 9rem); aspect-ratio: 1; display: grid; place-items: center; }
-.badge::before { content: ""; position: absolute; inset: 0; border-radius: 50%; background: var(--paper); }
-.badge svg { position: absolute; inset: 0; width: 100%; height: 100%; animation: spin 26s linear infinite; }
-.badge text { font-family: var(--mono); font-size: 8px; font-weight: 500; letter-spacing: 2.2px; text-transform: uppercase; fill: var(--ink); }
-.badge b { position: relative; font-family: var(--italic); font-style: italic; font-weight: 400; font-size: clamp(1.6rem, 2.6vw, 2.2rem); color: var(--red); }
-@keyframes spin { to { transform: rotate(360deg); } }
 
 /* ── 4. MAKEUP: due foto specchiate e la parola gigante ferma al centro ── */
 .mk { position: relative; height: 210vh; }
@@ -70,13 +56,10 @@
 /* ── 5. MANIFESTO ── */
 .mani { position: relative; padding-block: clamp(4rem, 3rem + 5vw, 8rem); overflow-x: clip; }
 .mani-grid { display: grid; gap: 2rem; justify-items: center; }
-@media (min-width: 1000px) { .mani-grid { grid-template-columns: 1fr minmax(0, 600px) 1fr; align-items: end; gap: clamp(2rem, 4vw, 4rem); } .mani-l { justify-self: start; align-self: start; } .mani-r { justify-self: end; } }
-.mani-side { display: grid; gap: 1.2rem; max-width: 18rem; justify-items: start; }
-.mani-claim { font-family: var(--display); font-size: clamp(1.9rem, 1.4rem + 1.5vw, 2.8rem); line-height: 1.05; letter-spacing: -.015em; }
-.mani-claim em { color: var(--red); }
-.mani-r p { color: var(--ink-2); }
+@media (min-width: 1000px) { .mani-grid { grid-template-columns: minmax(0, 560px) minmax(0, 20rem); justify-content: center; align-items: end; gap: clamp(3rem, 6vw, 6rem); } }
+.mani-side { display: grid; gap: 1.2rem; max-width: 20rem; justify-items: start; }
+.mani-side p:not(.eyebrow) { color: var(--ink-2); }
 .mani-card { position: relative; width: 100%; max-width: 600px; aspect-ratio: 4 / 5; border-radius: calc(var(--r) + 8px); overflow: hidden; background: #5a4040; box-shadow: 0 40px 80px -40px rgba(17, 17, 17, .55); }
-@media (max-width: 999px) { .mani-l { order: -1; justify-self: start; } .mani-r { justify-self: start; } }
 .mani-card svg { display: block; width: 100%; height: 100%; }
 .mani-words text { font-family: var(--display); font-weight: 900; font-size: 560px; }
 .mani-num { font-family: var(--mono); font-size: 22px; font-weight: 500; letter-spacing: 6px; fill: rgba(244, 241, 236, .9); }
@@ -101,36 +84,20 @@
 .met-steps p { color: var(--ink-2); max-width: 30rem; }
 @media (max-width: 899px) { .met-steps li { opacity: 1; } }
 
-/* ── 7. FIRMA SUL VISO ── */
-.wm { padding-inline: var(--gut); }
-.wm-frame { height: min(90vh, 60vw); min-height: 22rem; }
-.wm-frame img { object-position: 50% 32%; }
-.wm-frame::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(17, 17, 17, 0) 35%, rgba(17, 17, 17, .22)); pointer-events: none; }
-.wm-mq { position: absolute; z-index: 1; left: 0; right: 0; top: 52%; translate: 0 -50%; overflow: hidden; pointer-events: none; }
-.wm-track { display: flex; width: max-content; will-change: transform; }
-.wm-track span { padding-right: .3em; font-family: var(--italic); font-style: italic; font-size: clamp(5rem, 16vw, 19rem); line-height: 1.1; white-space: nowrap; color: rgba(244, 241, 236, .74); }
-
-/* ── 8. SERVIZI in breve ── */
-.serv { overflow: hidden; }
-.serv-giant { top: clamp(3rem, 6vw, 6rem); right: -2vw; font-size: clamp(8rem, 27vw, 27rem); }
-.serv-head { position: relative; z-index: 1; display: grid; gap: 1.4rem; max-width: 46rem; margin-bottom: clamp(3rem, 6vw, 5rem); }
-.serv-grid { position: relative; z-index: 1; display: grid; gap: 3.2rem; }
-@media (min-width: 900px) { .serv-grid { grid-template-columns: repeat(3, 1fr); gap: clamp(1.5rem, 3vw, 3rem); } .serv-card:nth-child(2) { margin-top: 6rem; } .serv-card:nth-child(3) { margin-top: 2.5rem; } }
-.serv-card { display: grid; gap: 1.1rem; align-content: start; justify-items: start; }
-.serv-card .ph { width: 100%; aspect-ratio: 4 / 5; }
-.serv-card .ph video { object-position: 50% 30%; }
-.serv-card h3 { font-family: var(--display); font-weight: 400; font-size: clamp(1.9rem, 1.5rem + 1.2vw, 2.5rem); line-height: 1.05; letter-spacing: -.015em; }
-.serv-card h3 small { font-family: var(--mono); font-size: .7rem; letter-spacing: .14em; color: var(--ink-2); margin-left: .5rem; }
-.serv-card p { color: var(--ink-2); max-width: 22rem; }
-.serv-extra { position: relative; z-index: 1; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem; margin-top: clamp(3.5rem, 6vw, 5.5rem); padding-top: 1.6rem; border-top: 1px solid var(--line); }
-.serv-extra p { font-family: var(--display); font-size: clamp(1.4rem, 1.1rem + .9vw, 2rem); line-height: 1.2; }
-.serv-extra p em { color: var(--red); }
+/* ── 7. SERVIZI in breve: tre righe grandi ── */
+.serv { padding-block: clamp(4rem, 3rem + 5vw, 8rem); }
+.serv-list { margin-top: 1.6rem; border-top: 1px solid var(--line); }
+.serv-list a { display: grid; grid-template-columns: 2.4rem 1fr auto; align-items: baseline; gap: 1rem; padding-block: clamp(1.1rem, 2.4vw, 1.8rem); border-bottom: 1px solid var(--line); transition: color .4s var(--ease-out), padding .5s var(--ease-out); }
+.serv-list i { font-style: normal; font-family: var(--mono); font-size: .72rem; color: var(--ink-2); }
+.serv-list span { font-family: var(--display); font-size: clamp(2rem, 1.3rem + 3.2vw, 4.6rem); line-height: 1; letter-spacing: -.02em; }
+.serv-list em { color: var(--red); }
+.serv-list b { font-family: var(--mono); font-weight: 500; font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; }
+.serv-list a:hover { padding-left: .8rem; }
 
 /* ── 9. GALLERIA ORIZZONTALE ── */
 .hg { position: relative; padding-block: clamp(4rem, 7vw, 6rem); overflow: hidden; }
 .hg-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 1.2rem 2rem; margin-bottom: clamp(2rem, 4vw, 3rem); }
 .hg-head .title { margin-top: 1rem; }
-.hg-note { max-width: 22rem; color: var(--ink-2); }
 .hg-track { display: flex; gap: clamp(1rem, 2vw, 2rem); padding: 0 var(--gut) 1rem; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scrollbar-width: none; }
 .hg-track::-webkit-scrollbar { display: none; }
 .hg-item { flex: none; width: clamp(15rem, 74vw, 26rem); scroll-snap-align: center; }
@@ -151,44 +118,24 @@
   html.js:not(.rm) .hg-track { overflow: visible; width: max-content; scroll-snap-type: none; padding-bottom: 0; }
   html.js:not(.rm) .hg-item { width: clamp(16rem, 25vw, 24rem); }
   html.js:not(.rm) .hg-item:nth-child(even) { margin-top: 3.5rem; }
-  html.js:not(.rm) .hg-item .hg-ph img { scale: 1.2; }
   .hg { padding-block: 0; }
 }
 
-/* ── 10. RECENSIONI ── */
-.rec { background: var(--ink); color: var(--paper); overflow: hidden; }
-.rec-grid { display: grid; gap: 3rem; }
-@media (min-width: 900px) { .rec-grid { grid-template-columns: .8fr 1.6fr; gap: clamp(3rem, 6vw, 7rem); align-items: center; } }
-.rec-score { display: grid; gap: .8rem; align-content: start; justify-items: start; }
-.rec-score strong { font-family: var(--display); font-weight: 400; font-size: clamp(6rem, 4rem + 9vw, 11rem); line-height: .85; letter-spacing: -.03em; }
+/* ── 9. RECENSIONI: una riga con il punteggio ── */
+.rec { padding-block: clamp(2.6rem, 5vw, 4rem); background: var(--ink); color: var(--paper); }
+.rec-row { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.8rem; }
+.rec-row strong { font-family: var(--display); font-weight: 400; font-size: clamp(3.4rem, 2.4rem + 4vw, 6rem); line-height: .85; letter-spacing: -.03em; }
 .stars { display: flex; gap: .3rem; }
 .stars svg { width: 1.15rem; height: 1.15rem; }
-.rec-score p:not(.eyebrow) { font-family: var(--mono); font-size: .74rem; letter-spacing: .16em; text-transform: uppercase; color: rgba(244, 241, 236, .75); }
-.rec-score .link { margin-top: .6rem; }
-.slider { position: relative; }
-.slides { display: grid; }
-.slide { grid-area: 1 / 1; display: grid; gap: 1.6rem; align-content: start; opacity: 0; visibility: hidden; transition: opacity .9s var(--ease-out), visibility .9s; }
-.slide.is-on { opacity: 1; visibility: visible; }
-.slide blockquote { font-family: var(--italic); font-style: italic; font-size: clamp(1.8rem, 1.2rem + 2.3vw, 3.3rem); line-height: 1.12; }
-.slide blockquote::before { content: ""; display: block; width: 3rem; height: 1px; margin-bottom: 1.6rem; background: var(--red); }
-.slide cite { font-style: normal; font-family: var(--mono); font-size: .74rem; letter-spacing: .16em; text-transform: uppercase; color: rgba(244, 241, 236, .75); }
-.rec .todo { background: rgba(244, 241, 236, .1); outline-color: rgba(244, 241, 236, .5); }
-.slider-nav { display: flex; align-items: center; gap: 1rem; margin-top: 2.6rem; }
-.slider-nav button { display: grid; place-items: center; width: 3.2rem; height: 3.2rem; border-radius: 50%; border: 1px solid rgba(244, 241, 236, .4); background: none; color: var(--paper); cursor: pointer; transition: background .4s, color .4s; }
-.slider-nav button:hover { background: var(--paper); color: var(--ink); }
-.slider-nav svg { width: 1.1rem; height: 1.1rem; }
-.slider-bar { position: relative; flex: 1; max-width: 14rem; height: 1px; overflow: hidden; background: rgba(244, 241, 236, .25); }
-.slider-bar i { position: absolute; inset: 0; background: var(--paper); transform-origin: left; transform: scaleX(0); }
-.slider-bar i.run { animation: bar 6.5s linear forwards; }
-@keyframes bar { to { transform: scaleX(1); } }
-.slider-n { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+.rec-row p { font-family: var(--mono); font-size: .74rem; letter-spacing: .16em; text-transform: uppercase; color: rgba(244, 241, 236, .75); }
+.rec-row .link { margin-left: auto; }
 
 /* ── 11. CONTATTI: modulo che apre WhatsApp ── */
+.book--home { padding-bottom: clamp(2.6rem, 5vw, 4rem); }
 .cont { padding: 0 0 clamp(5rem, 8vw, 8rem); }
 .cont-grid { display: grid; gap: 3rem; }
 @media (min-width: 900px) { .cont-grid { grid-template-columns: 1fr 1fr; gap: clamp(3rem, 7vw, 8rem); align-items: start; } }
-.cont-text { display: grid; gap: 1.6rem; align-content: start; }
-.cont-direct { display: grid; gap: .35rem; font-family: var(--mono); font-size: .84rem; color: var(--ink-2); }
+.cont-direct { display: grid; gap: .5rem; align-content: start; font-family: var(--mono); font-size: .84rem; color: var(--ink-2); }
 .cont-direct a { text-decoration: underline; text-underline-offset: 3px; }
 .form { display: grid; gap: 1.5rem; padding: clamp(1.6rem, 4vw, 2.8rem); border-radius: calc(var(--r) + 6px); background: #F9F7F3; border: 1px solid var(--line); }
 .field { display: grid; gap: .45rem; }
@@ -205,8 +152,8 @@
 .form .btn { justify-self: start; }
 
 @media (prefers-reduced-motion: reduce) {
-  .mq-track, .badge svg, .slider-bar i.run { animation: none !important; }
-  .slide, .met-ph, .met-ph img, .met-steps li { transition: none; }
+  .mq-track { animation: none !important; }
+  .met-ph, .met-ph img, .met-steps li, .serv-list a { transition: none; }
   .mk { height: auto; }
   .mk-pin { position: relative; height: auto; min-height: 100vh; }
 }

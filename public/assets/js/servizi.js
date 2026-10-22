@@ -6,8 +6,7 @@
   var $ = FS.$, $$ = FS.$$, gs = window.gsap;
 
   FS.start(function () {
-    /* scontrini: cadono dall'alto uno dopo l'altro e oscillano come pendoli attorno allo spillo,
-       poi restano in un'oscillazione leggerissima */
+    /* scontrini: cadono dall'alto uno dopo l'altro e oscillano come pendoli attorno allo spillo finché si fermano */
     var rcs = $$('[data-rc]');
     var fall = gs.timeline({ scrollTrigger: { trigger: '[data-rc-wall]', start: 'top 78%' } });
     rcs.forEach(function (rc, i) {
@@ -15,11 +14,6 @@
       fall.fromTo(rc, { y: function () { return -window.innerHeight * 0.85; }, rotation: swing * 0.4, autoAlpha: 0 },
         { y: 0, rotation: swing, autoAlpha: 1, duration: 0.85, ease: 'power3.in' }, i * 0.18)
         .to(rc, { rotation: 0, duration: 3, ease: 'elastic.out(1.15, 0.17)' }, '>-0.02');
-    });
-    fall.call(function () {
-      rcs.forEach(function (rc, i) {
-        gs.fromTo(rc, { rotation: -0.7 }, { rotation: 0.7, duration: 2.6 + i * 0.45, ease: 'sine.inOut', yoyo: true, repeat: -1 });
-      });
     });
 
     /* col mouse lo scontrino si solleva e si inclina in 3D verso il puntatore */
@@ -35,8 +29,8 @@
           ry(((e.clientX - r.left) / r.width - 0.5) * 18);
           rx(-((e.clientY - r.top) / r.height - 0.5) * 12);
         });
-        rc.addEventListener('pointerenter', function () { ly(-16); rc.classList.add('is-up'); });
-        rc.addEventListener('pointerleave', function () { rx(0); ry(0); ly(0); rc.classList.remove('is-up'); });
+        rc.addEventListener('pointerenter', function () { ly(-16); });
+        rc.addEventListener('pointerleave', function () { rx(0); ry(0); ly(0); });
       });
     }
 
