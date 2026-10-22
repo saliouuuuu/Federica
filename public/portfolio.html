@@ -24,8 +24,8 @@
 <link rel="preload" href="/assets/fonts/archivo-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/instrument-serif-latin-400-italic.woff2" as="font" type="font/woff2" crossorigin>
 <script src="/assets/js/boot.js?v=e8bb1ff9"></script>
-<link rel="stylesheet" href="/assets/css/site.css?v=296ffd06">
-<link rel="stylesheet" href="/assets/css/portfolio.css?v=37d011bb">
+<link rel="stylesheet" href="/assets/css/site.css?v=59b8475f">
+<link rel="stylesheet" href="/assets/css/portfolio.css?v=9b79ab38">
 
 </head>
 <body class="pg-portfolio">
@@ -79,14 +79,14 @@
 </div>
 
 <main id="contenuto">
-<!-- 1. RIVISTA APERTA: titolo in alto, due pagine; scorrendo le pagine di destra si girano e scoprono la doppia pagina dopo -->
+<!-- 1. RIVISTA APERTA: titolo in alto, due pagine; le pagine di destra si girano scorrendo, trascinando le foto di lato o con le frecce -->
 <section class="mag" aria-labelledby="h1" data-mag>
   <div class="mag-pin">
     <header class="mag-head">
       <p class="eyebrow" data-fade="0.3">Portfolio</p>
       <h1 class="mag-title" id="h1" data-split>I miei <em>lavori</em></h1>
     </header>
-    <div class="mag-book" data-book aria-hidden="true">
+    <div class="mag-book" data-book data-cursor="sfoglia" aria-hidden="true">
       <div class="mag-page mag-page--l"><div class="mag-in"><p class="mag-run"><span>Federica Siviero</span><span>Spose</span></p><span class="mag-ph"><picture><source type="image/webp" srcset="/assets/img/palazzo-ritratto-braccia-480.webp 480w, /assets/img/palazzo-ritratto-braccia-800.webp 800w, /assets/img/palazzo-ritratto-braccia-1200.webp 1200w" sizes="(min-width: 900px) 34vw, 44vw"><img src="/assets/img/palazzo-ritratto-braccia-800.jpg" width="800" height="800" alt="" loading="lazy" decoding="async"></picture></span><p class="mag-folio">01</p></div></div>
       <div class="mag-page mag-page--r"><div class="mag-in"><p class="mag-run"><span>Federica Siviero</span><span>Beauty</span></p><span class="mag-ph"><picture><source type="image/webp" srcset="/assets/img/ritratto-rosa-tatuaggio-480.webp 480w, /assets/img/ritratto-rosa-tatuaggio-800.webp 800w, /assets/img/ritratto-rosa-tatuaggio-1200.webp 1200w" sizes="(min-width: 900px) 34vw, 44vw"><img src="/assets/img/ritratto-rosa-tatuaggio-800.jpg" width="800" height="1067" alt="" loading="lazy" decoding="async"></picture></span><p class="mag-folio">06</p></div></div>
       <div class="mag-leaf" data-leaf>
@@ -99,7 +99,11 @@
       </div>
       <i class="mag-spine"></i>
     </div>
-    <p class="mag-hint" data-fade="0.8">Scorri per sfogliare</p>
+    <div class="mag-nav">
+      <button type="button" class="mag-btn" data-mag-prev aria-label="Pagina precedente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+      <p class="mag-hint"><span data-mag-n>1</span> / 3 <span class="mag-how">· trascina o scorri</span></p>
+      <button type="button" class="mag-btn" data-mag-next aria-label="Pagina successiva"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    </div>
   </div>
 </section>
 
@@ -149,7 +153,7 @@
 <section class="book" aria-labelledby="bookTitle">
   <p class="eyebrow" data-fade>Contatti</p>
   <h2 class="book-word" id="bookTitle" data-lines>Prenotiamo<em>?</em></h2>
-  <p data-fade>Ti piace uno di questi lavori? Scrivimi la tua data: ti rispondo io e confermiamo insieme disponibilità e dettagli.</p>
+  <p data-fade>Ti piace uno di questi lavori? Scrivimi la tua data.</p>
   <a class="book-cta magnetic" href="#prenota" data-wa data-wa-msg="Ciao Federica, ho visto il portfolio e vorrei prenotare.">Scrivimi</a>
 </section>
 </main>
@@ -179,7 +183,7 @@
 <script defer src="/assets/vendor/Flip.min.js?v=d2d2f30a"></script>
 <script defer src="/assets/vendor/lenis.min.js?v=978450a5"></script>
 <script defer src="/assets/js/config.js?v=72627ee5"></script>
-<script defer src="/assets/js/site.js?v=5d092a48"></script>
-<script defer src="/assets/js/portfolio.js?v=44dd2ba3"></script>
+<script defer src="/assets/js/site.js?v=a4cb59af"></script>
+<script defer src="/assets/js/portfolio.js?v=5751fd73"></script>
 </body>
 </html>
